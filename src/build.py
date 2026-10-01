@@ -35,6 +35,9 @@ for fname, title, body, d in [
     ('pour-qui.html', 'Pour qui · Firmaty', pages.POURQUI, "Coopératives, domaines, stations, exportateurs, agrégateurs et assureurs : ce que Firmaty change pour chacun."),
     ('galerie.html', 'Galerie · Firmaty', pages.GALERIE, "Photos du terrain et écrans de la plateforme Firmaty."),
     ('questions.html', 'Questions · Firmaty', pages.QUESTIONS, "Tarification, matériel, imagerie, cultures et données : les réponses aux questions fréquentes."),
+    ('mentions-legales.html', 'Mentions légales · Firmaty', pages.MENTIONS, "Éditeur, hébergeur et propriété intellectuelle du site Firmaty."),
+    ('confidentialite.html', 'Politique de confidentialité · Firmaty', pages.CONFID, "Comment Firmaty traite les informations transmises via le site."),
+    ('cookies.html', 'Cookies · Firmaty', pages.COOKIES, "Le site Firmaty ne dépose aucun cookie de suivi."),
     ('contact.html', 'Démonstration · Firmaty', pages.CONTACT, "Demandez une démonstration de Firmaty sur vos propres secteurs."),
 ]:
     open(os.path.join(OUT, fname), 'w').write(page(title, d, fname, body))

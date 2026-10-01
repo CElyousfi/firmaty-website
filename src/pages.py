@@ -101,7 +101,7 @@ METHODE = phero("vue-aerienne", "La méthode",
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="lexique">
   <div class="sec-head">
     <p class="eyebrow a2">Lexique</p>
     <h2 class="h2 a2" style="transition-delay:.1s">Les mots de la plateforme</h2>
@@ -379,3 +379,41 @@ CONTACT = phero("avocat", "Démonstration",
 </section>
 </main>
 '''
+
+
+# ---------------------------------------------------------------- LEGAL PAGES
+def legal(crumb, h1, lead, blocks):
+    body = ''.join(f'<section class="legal-block a2"><h2 class="h3">{t}</h2>{c}</section>' for t, c in blocks)
+    return f'''<header class="phero small" id="top">
+  <img class="bg" src="img/vue-aerienne.jpg" alt="">
+  <p class="crumb a1"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>{crumb}</span></p>
+  <h1 class="a1">{h1}</h1>
+  <p class="lead a1">{lead}</p>
+</header>
+<main>
+<section class="sec legal-page">{body}</section>
+</main>
+''' + cta(h2="Une question sur vos données ?", p="Écrivez-nous depuis la page démonstration. Nous répondons à toute demande concernant vos informations.", btn="Nous contacter")
+
+TODO = '<span class="todo">à compléter</span>'
+
+MENTIONS = legal("Mentions légales", "Mentions légales", "Les informations sur l'éditeur et l'hébergeur du site firmaty.com.", [
+  ("Éditeur du site", f"<p>Firmaty · Agriculture de précision<br>Raison sociale : {TODO}<br>Forme juridique et capital : {TODO}<br>Siège social : {TODO}, Maroc<br>Registre du commerce et identifiant (ICE) : {TODO}<br>Directeur de la publication : {TODO}<br>Contact : via la page <a href=\"contact.html\">Démonstration</a></p>"),
+  ("Hébergement", "<p>Le site est hébergé par Vercel Inc., États-Unis (vercel.com). Les fichiers du site sont distribués par son réseau de diffusion.</p>"),
+  ("Propriété intellectuelle", "<p>Les textes, photographies, interfaces reconstituées et le logo Firmaty présentés sur ce site sont la propriété de Firmaty. Toute reproduction sans autorisation préalable est interdite.</p><p>Les écrans de la plateforme affichés sur le site sont reconstitués avec des données de démonstration. Ils ne contiennent aucune donnée d'exploitation réelle.</p>"),
+  ("Imagerie satellite", "<p>L'imagerie satellite exploitée par la plateforme provient du programme européen Copernicus.</p>"),
+])
+
+CONFID = legal("Politique de confidentialité", "Politique de confidentialité", "Quelles informations nous recevons, pourquoi, et comment vous gardez la main dessus.", [
+  ("Les informations que vous nous transmettez", "<p>Le formulaire de demande de démonstration recueille : nom et prénom, fonction, structure, type de structure, surface pilotée, cultures principales, région, téléphone, email professionnel et votre message.</p><p>Ces informations servent uniquement à préparer l'échange de démonstration et à vous recontacter. Elles ne sont ni revendues ni utilisées à des fins publicitaires.</p>"),
+  ("Vos données d'exploitation", "<p>Les analyses de laboratoire et les contours de parcelles que vous nous confiez restent votre propriété et sont cloisonnés par compte. Les modalités précises sont définies dans le contrat, et nous en parlons ouvertement avant tout engagement.</p>"),
+  ("Durée de conservation", f"<p>Les informations d'une demande de démonstration sont conservées pendant {TODO} après le dernier échange, puis supprimées.</p>"),
+  ("Vos droits", f"<p>Conformément à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous disposez d'un droit d'accès, de rectification et d'opposition. Pour l'exercer, contactez-nous à {TODO}. Vous pouvez également saisir la CNDP (Commission nationale de contrôle de la protection des données à caractère personnel).</p>"),
+  ("Services tiers", "<p>Le site charge ses polices de caractères depuis Google Fonts, ce qui transmet l'adresse IP de votre navigateur aux serveurs de Google. Le site est hébergé par Vercel Inc.</p>"),
+])
+
+COOKIES = legal("Cookies", "Cookies", "Ce que le site dépose, ou plutôt ne dépose pas, dans votre navigateur.", [
+  ("Aucun cookie de suivi", "<p>Le site firmaty.com ne dépose aucun cookie publicitaire ni de mesure d'audience, et n'utilise aucun outil de suivi. Aucun bandeau de consentement n'est donc nécessaire.</p>"),
+  ("Ce qui peut être échangé", "<p>Pour afficher les pages, votre navigateur contacte notre hébergeur (Vercel) et le service de polices Google Fonts. Ces échanges techniques ne servent pas à vous suivre d'un site à l'autre.</p>"),
+  ("Si cela change", "<p>Si nous ajoutons un jour un outil de mesure d'audience, cette page sera mise à jour et votre accord sera demandé lorsque la loi l'exige.</p>"),
+])
