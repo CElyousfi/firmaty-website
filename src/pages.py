@@ -215,6 +215,21 @@ PLATEFORME = phero("laboratoire", "La plateforme",
   scrolly() + f'''
 <p class="demo-note">Interfaces reconstituées avec des données de démonstration. Aucune donnée d'exploitation réelle n'est affichée.</p>
 
+<section class="sec situ">
+  <div class="sec-head">
+    <p class="eyebrow a2">En situation</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Au bureau comme au champ</h2>
+    <p class="lede a2" style="transition-delay:.15s">La même plateforme sur ordinateur, tablette et téléphone, là où les décisions se prennent.</p>
+  </div>
+  <div class="situ-grid">
+    <figure class="situ-item wide a2"><img src="img/situ-pilotage.jpg" alt="Le tableau de bord Pilotage de Firmaty sur un ordinateur, au bureau d'une station de conditionnement" loading="lazy"><figcaption><b>Pilotage</b>Au bureau de la station, la vue d'ensemble des secteurs et des actions de la semaine.</figcaption></figure>
+    <figure class="situ-item a2" style="transition-delay:.1s"><img src="img/situ-satellite.jpg" alt="L'écran Satellite de Firmaty sur une tablette tenue entre deux rangs d'orangers" loading="lazy" style="object-position:62% center"><figcaption><b>Satellite</b>Entre les rangs, la tendance de vigueur du secteur sous les yeux.</figcaption></figure>
+    <figure class="situ-item a2" style="transition-delay:.2s"><img src="img/situ-climat.jpg" alt="L'écran Climat de Firmaty sur un téléphone, au pied d'un jeune agrume" loading="lazy" style="object-position:34% center"><figcaption><b>Climat</b>Au pied de l'arbre, la recommandation d'irrigation des prochaines 24 heures.</figcaption></figure>
+    <figure class="situ-item wide a2"><img src="img/situ-labo.jpg" alt="L'écran Laboratoire de Firmaty sur un ordinateur, au milieu d'échantillons de sol et de feuilles" loading="lazy"><figcaption><b>Laboratoire</b>Au labo, les analyses confrontées aux cibles du stade dès leur import.</figcaption></figure>
+  </div>
+</section>
+
+
 <section class="wrap20 sec-gap">
   <div class="box">
     <p class="eyebrow a2">Les services</p>
@@ -333,7 +348,8 @@ POURQUI = phero("station", "Pour qui",
 
 # ---------------------------------------------------------------- GALERIE
 def fig(src, cap, w, h, pos="center"):
-    return f'<figure class="gitem fd"><button type="button" class="gbtn" data-full="img/{src}.jpg" data-cap="{cap}" aria-label="Agrandir : {cap}"><img src="img/{src}.jpg" alt="{cap}" width="{w}" height="{h}" loading="lazy" style="object-position:{pos}"></button><figcaption>{cap}</figcaption></figure>'
+    full = f"img/{src}-hd.jpg" if src.startswith("situ-") else f"img/{src}.jpg"
+    return f'<figure class="gitem fd"><button type="button" class="gbtn" data-full="{full}" data-cap="{cap}" aria-label="Agrandir : {cap}"><img src="img/{src}.jpg" alt="{cap}" width="{w}" height="{h}" loading="lazy" style="object-position:{pos}"></button><figcaption>{cap}</figcaption></figure>'
 def figscr(scr, cap):
     return f'<figure class="gitem scr fd">{screen(scr, cap)}<figcaption>{cap}</figcaption></figure>'
 
@@ -350,6 +366,8 @@ GALERIE = phero("goutte-a-goutte", "Galerie",
   </div>
   <div class="masonry">
     {fig("hero","Verger d'agrumes au coucher du soleil",1536,1024,"70% center")}
+    {fig("situ-pilotage","Pilotage : le tableau de bord au bureau de la station",1400,764)}
+    {fig("situ-satellite","Satellite : la tendance de vigueur sur tablette, au verger",1400,764,"62% center")}
     {figscr(SATELLITE,"Écran Satellite : tendance de vigueur sur douze semaines")}
     {fig("goutte-a-goutte","Goutteur d'irrigation au pied d'un jeune agrume",1100,733)}
     {fig("avocat","Contrôle d'une feuille d'avocatier",1300,867)}
@@ -359,6 +377,8 @@ GALERIE = phero("goutte-a-goutte", "Galerie",
     {fig("laboratoire","Échantillons de feuilles et de sol au laboratoire",1100,733)}
     {figscr(CLIMAT,"Écran Climat : irrigation et pression sanitaire")}
     {fig("station","Arrivée des oranges à la station de conditionnement",1100,733)}
+    {fig("situ-climat","Climat : la recommandation d'irrigation sur téléphone",1400,764,"34% center")}
+    {fig("situ-labo","Laboratoire : les écarts aux cibles du stade, au labo",1400,764)}
     {figscr(PILOTAGE,"Écran Pilotage : vue d'ensemble de l'exploitation")}
   </div>
   <p class="demo-note">Écrans reconstitués avec des données de démonstration.</p>

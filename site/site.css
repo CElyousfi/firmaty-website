@@ -694,3 +694,15 @@ mark{background:rgba(240,194,94,.45);color:inherit;border-radius:3px;padding:0 1
   .st-frame,.st-ink,.smap-ink,.smap-panel,.aud-img,.lc-curve,.engine::after{transition:none}
   .zone{animation:none!important}.aud-panel,.gitem.fadein{animation:none}
 }
+
+/* plateforme: in-situ photos */
+.situ-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.situ-item{position:relative;margin:0;border-radius:25px;overflow:hidden;background:var(--sand);grid-column:span 2;aspect-ratio:4/3.1}
+.situ-item.wide{grid-column:span 3;aspect-ratio:auto}
+.situ-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.situ-item:hover img{transform:scale(1.03)}
+.situ-item figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,251,243,.95);color:var(--blue);border-radius:18px;padding:12px 16px;font-size:14px;line-height:21px;max-width:440px}
+.situ-item figcaption b{display:block;font-family:var(--display);font-size:16px;line-height:22px}
+@media (max-width:1024px){.situ-grid{grid-template-columns:1fr 1fr}.situ-item,.situ-item.wide{grid-column:span 1;aspect-ratio:4/3.2}}
+@media (max-width:650px){.situ-grid{grid-template-columns:1fr;gap:16px}.situ-item,.situ-item.wide{border-radius:20px;aspect-ratio:4/3.3}.situ-item figcaption{font-size:13px;line-height:19px;padding:10px 13px}}
+@media (prefers-reduced-motion:reduce){.situ-item img{transition:none}}
