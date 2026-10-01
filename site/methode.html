@@ -51,25 +51,37 @@
     <p class="eyebrow a2">Pourquoi le croisement change tout</p>
     <h2 class="h2 a2" style="transition-delay:.1s">Le même secteur, deux lectures</h2>
     <p class="lede a2" style="transition-delay:.15s">Exemple tiré de notre exploitation de démonstration : agrumes et avocat en plein champ, 340 hectares, 12 secteurs.</p>
-    <div class="grid2">
-      <article class="card a2">
-        <span class="pill bad">Plateforme satellite seule</span>
-        <div class="txt">
-          <p class="stat">−11 % <small>/ 15 jours</small></p>
-          <h3>Vigueur du secteur B4 : alerte envoyée</h3>
-          <p>L'indice sort de sa moyenne, le système déclenche. Sans le stade de la culture ni les conditions de la période, il ne peut faire que ça. L'équipe se déplace sur B4 et ne trouve rien.</p>
-          <p class="note">Pendant ce temps, la vraie carence sur C1 n'est pas détectée. Elle n'est visible que dans les analyses de laboratoire.</p>
+    <div class="smap a2" data-mode="sat">
+      <div class="smap-toggle" role="tablist" aria-label="Lecture du secteur">
+        <button type="button" role="tab" class="on" aria-selected="true" data-mode="sat">Plateforme satellite seule</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="fir">Firmaty · satellite + climat + laboratoire</button>
+        <span class="smap-ink" aria-hidden="true"></span>
+      </div>
+      <div class="smap-body">
+        <div class="smap-photo">
+          <img src="img/vue-aerienne.jpg" alt="Vue aérienne de trois blocs de vergers, celui du centre moins vigoureux" width="1100" height="733" loading="lazy">
+          <div class="zone z-b4"><span class="zl">B4 · Agrumes</span><span class="zs s-sat">Alerte · vigueur −11 %</span><span class="zs s-fir">Physiologique · aucune action</span></div>
+          <div class="zone z-c1"><span class="zl">C1 · Avocat</span><span class="zs s-sat">Aucun signal</span><span class="zs s-fir">À corriger · K −25 %</span></div>
+          <div class="zone z-d2"><span class="zl">D2 · Agrumes</span><span class="zs s-sat">Aucun signal</span><span class="zs s-fir">À surveiller · 48 h</span></div>
+          <p class="smap-cap">Exploitation de démonstration · 340 ha · 12 secteurs</p>
         </div>
-      </article>
-      <article class="card a2" style="transition-delay:.1s">
-        <span class="pill good">Firmaty · satellite + climat + laboratoire</span>
-        <div class="txt">
-          <p class="stat">3 sources</p>
-          <h3>Fausse alerte écartée, vrai problème trouvé</h3>
-          <p>Sur B4, les deux indices baissent ensemble en phase de développement des fruits et les conditions climatiques sont conformes : c'est physiologique, personne ne se déplace. Sur C1, l'analyse foliaire montre un potassium en retrait de 25 % sur la cible du stade.</p>
-          <p class="note"><b>Recommandation générée :</b> corriger le potassium sur C1 par fertigation avant la fin du stade. Le calibre du fruit est le premier poste affecté.</p>
+        <div class="smap-panels">
+          <div class="smap-panel p-sat">
+            <p class="stat">−11 % <small>/ 15 jours</small></p>
+            <h3>Vigueur du secteur B4 : alerte envoyée</h3>
+            <p>L'indice sort de sa moyenne, le système déclenche. Sans le stade de la culture ni les conditions de la période, il ne peut faire que ça. L'équipe se déplace sur B4 et ne trouve rien.</p>
+            <p class="note">Pendant ce temps, la vraie carence sur C1 n'est pas détectée. Elle n'est visible que dans les analyses de laboratoire.</p>
+            <ul class="smap-list"><li><span>B4</span>Déplacement inutile<b class="chip crit">Fausse alerte</b></li><li><span>C1</span>Carence non vue<b class="chip n">Aucun signal</b></li><li><span>D2</span>Risque non anticipé<b class="chip n">Aucun signal</b></li></ul>
+          </div>
+          <div class="smap-panel p-fir">
+            <p class="stat">3 sources</p>
+            <h3>Fausse alerte écartée, vrai problème trouvé</h3>
+            <p>Sur B4, les deux indices baissent ensemble en phase de développement des fruits et les conditions climatiques sont conformes : c'est physiologique, personne ne se déplace. Sur C1, l'analyse foliaire montre un potassium en retrait de 25 % sur la cible du stade.</p>
+            <p class="note"><b>Recommandation générée :</b> corriger le potassium sur C1 par fertigation avant la fin du stade. Le calibre du fruit est le premier poste affecté.</p>
+            <ul class="smap-list"><li><span>B4</span>Baisse physiologique<b class="chip ok">Aucune action</b></li><li><span>C1</span>Potassium −25 %<b class="chip crit">À corriger</b></li><li><span>D2</span>Pression cochenille<b class="chip warn">À surveiller</b></li></ul>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
@@ -92,12 +104,12 @@
     <h2 class="h2 a2" style="transition-delay:.1s">Comment un écart devient une décision</h2>
     <p class="lede a2" style="transition-delay:.15s">Chaque variation suit le même chemin avant d'arriver dans votre synthèse du jour.</p>
   </div>
-  <div class="grid4">
-    <article class="card a2"><div class="dots" aria-label="Étape 1 sur 4"><i class="f"></i><i></i><i></i><i></i></div><div class="txt"><h3>Détecter</h3><p>Un indice satellite sort de sa tendance sur un secteur : vigueur, teneur en eau ou statut azoté.</p></div></article>
-    <article class="card a2" style="transition-delay:.1s"><div class="dots" aria-label="Étape 2 sur 4"><i class="f"></i><i class="f"></i><i></i><i></i></div><div class="txt"><h3>Replacer dans le contexte</h3><p>L'écart est comparé au stade phénologique de la culture et aux conditions climatiques de la période.</p></div></article>
-    <article class="card a2" style="transition-delay:.2s"><div class="dots" aria-label="Étape 3 sur 4"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div><div class="txt"><h3>Confronter aux mesures</h3><p>Les analyses de sol, foliaires et d'eau sont confrontées aux cibles du stade pour confirmer ou écarter une cause.</p></div></article>
-    <article class="card a2" style="transition-delay:.3s"><div class="dots" aria-label="Étape 4 sur 4"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div><div class="txt"><h3>Qualifier et recommander</h3><p>Normal : aucune action. À surveiller : suivi rapproché. À corriger : priorité et correction proposées, secteur par secteur.</p></div></article>
-  </div>
+  <ol class="engine" data-play>
+    <li class="eng-step"><span class="eng-n">1</span><h3>Détecter</h3><p>Un indice satellite sort de sa tendance sur un secteur : vigueur, teneur en eau ou statut azoté.</p><span class="eng-tag">Satellite</span></li>
+    <li class="eng-step"><span class="eng-n">2</span><h3>Replacer dans le contexte</h3><p>L'écart est comparé au stade phénologique de la culture et aux conditions climatiques de la période.</p><span class="eng-tag">Climat · stade</span></li>
+    <li class="eng-step"><span class="eng-n">3</span><h3>Confronter aux mesures</h3><p>Les analyses de sol, foliaires et d'eau sont confrontées aux cibles du stade pour confirmer ou écarter une cause.</p><span class="eng-tag">Laboratoire</span></li>
+    <li class="eng-step"><span class="eng-n">4</span><h3>Qualifier et recommander</h3><p>Chaque secteur reçoit un statut et, si besoin, la correction à apporter.</p><span class="eng-out"><b class="chip ok">Aucune action</b><b class="chip warn">À surveiller</b><b class="chip crit">À corriger</b></span></li>
+  </ol>
 </section>
 
 <section class="cta-wrap">
@@ -110,6 +122,24 @@
       <h3>C'est l'avance que vous prenez sur un stress hydrique.</h3>
       <p>L'indice de teneur en eau détecte un déficit avant que la plante ne l'exprime visuellement. Quand vos équipes le voient au champ, il est déjà installé. Sur une culture d'export, cette semaine et demie se lit directement dans le calibre du fruit et dans le tonnage que vous pourrez engager.</p>
     </div>
+    <figure class="lead-chart" data-play>
+      <svg viewBox="0 0 1000 250" role="img" aria-label="Illustration : l'indice de teneur en eau franchit le seuil de stress environ neuf jours avant que le symptôme soit visible au champ">
+        <rect class="lc-win" x="232" y="24" width="430" height="176"/>
+        <line class="lc-grid" x1="40" y1="200" x2="980" y2="200"/>
+        <line class="lc-thr" x1="40" y1="112" x2="980" y2="112"/>
+        <text class="lc-t" x="976" y="104" text-anchor="end">Seuil de stress</text>
+        <path class="lc-curve" d="M40 52 C 130 54, 190 80, 232 112 S 420 170, 560 182 S 820 192, 980 194"/>
+        <circle class="lc-dot d1" cx="232" cy="112" r="7"/>
+        <line class="lc-mark" x1="662" y1="20" x2="662" y2="200"/>
+        <circle class="lc-dot d2" cx="662" cy="186" r="7"/>
+        <text class="lc-t b" x="232" y="12" text-anchor="middle">Détection Firmaty</text>
+        <text class="lc-t b" x="662" y="12" text-anchor="middle">Symptôme visible au champ</text>
+        <text class="lc-big" x="447" y="92" text-anchor="middle">7 à 10 jours d'avance</text>
+        <g class="lc-ax"><text x="40" y="228">J0</text><text x="232" y="228" text-anchor="middle">J+4</text><text x="662" y="228" text-anchor="middle">J+13</text><text x="980" y="228" text-anchor="end">J+20</text></g>
+        <text class="lc-t" x="40" y="40">Indice de teneur en eau</text>
+      </svg>
+      <figcaption>Illustration du principe, pas une mesure d'exploitation.</figcaption>
+    </figure>
   </div>
 </section>
 

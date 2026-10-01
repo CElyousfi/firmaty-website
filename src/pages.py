@@ -39,25 +39,37 @@ METHODE = phero("vue-aerienne", "La méthode",
     <p class="eyebrow a2">Pourquoi le croisement change tout</p>
     <h2 class="h2 a2" style="transition-delay:.1s">Le même secteur, deux lectures</h2>
     <p class="lede a2" style="transition-delay:.15s">Exemple tiré de notre exploitation de démonstration : agrumes et avocat en plein champ, 340 hectares, 12 secteurs.</p>
-    <div class="grid2">
-      <article class="card a2">
-        <span class="pill bad">Plateforme satellite seule</span>
-        <div class="txt">
-          <p class="stat">−11 % <small>/ 15 jours</small></p>
-          <h3>Vigueur du secteur B4 : alerte envoyée</h3>
-          <p>L'indice sort de sa moyenne, le système déclenche. Sans le stade de la culture ni les conditions de la période, il ne peut faire que ça. L'équipe se déplace sur B4 et ne trouve rien.</p>
-          <p class="note">Pendant ce temps, la vraie carence sur C1 n'est pas détectée. Elle n'est visible que dans les analyses de laboratoire.</p>
+    <div class="smap a2" data-mode="sat">
+      <div class="smap-toggle" role="tablist" aria-label="Lecture du secteur">
+        <button type="button" role="tab" class="on" aria-selected="true" data-mode="sat">Plateforme satellite seule</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="fir">Firmaty · satellite + climat + laboratoire</button>
+        <span class="smap-ink" aria-hidden="true"></span>
+      </div>
+      <div class="smap-body">
+        <div class="smap-photo">
+          <img src="img/vue-aerienne.jpg" alt="Vue aérienne de trois blocs de vergers, celui du centre moins vigoureux" width="1100" height="733" loading="lazy">
+          <div class="zone z-b4"><span class="zl">B4 · Agrumes</span><span class="zs s-sat">Alerte · vigueur −11 %</span><span class="zs s-fir">Physiologique · aucune action</span></div>
+          <div class="zone z-c1"><span class="zl">C1 · Avocat</span><span class="zs s-sat">Aucun signal</span><span class="zs s-fir">À corriger · K −25 %</span></div>
+          <div class="zone z-d2"><span class="zl">D2 · Agrumes</span><span class="zs s-sat">Aucun signal</span><span class="zs s-fir">À surveiller · 48 h</span></div>
+          <p class="smap-cap">Exploitation de démonstration · 340 ha · 12 secteurs</p>
         </div>
-      </article>
-      <article class="card a2" style="transition-delay:.1s">
-        <span class="pill good">Firmaty · satellite + climat + laboratoire</span>
-        <div class="txt">
-          <p class="stat">3 sources</p>
-          <h3>Fausse alerte écartée, vrai problème trouvé</h3>
-          <p>Sur B4, les deux indices baissent ensemble en phase de développement des fruits et les conditions climatiques sont conformes : c'est physiologique, personne ne se déplace. Sur C1, l'analyse foliaire montre un potassium en retrait de 25 % sur la cible du stade.</p>
-          <p class="note"><b>Recommandation générée :</b> corriger le potassium sur C1 par fertigation avant la fin du stade. Le calibre du fruit est le premier poste affecté.</p>
+        <div class="smap-panels">
+          <div class="smap-panel p-sat">
+            <p class="stat">−11 % <small>/ 15 jours</small></p>
+            <h3>Vigueur du secteur B4 : alerte envoyée</h3>
+            <p>L'indice sort de sa moyenne, le système déclenche. Sans le stade de la culture ni les conditions de la période, il ne peut faire que ça. L'équipe se déplace sur B4 et ne trouve rien.</p>
+            <p class="note">Pendant ce temps, la vraie carence sur C1 n'est pas détectée. Elle n'est visible que dans les analyses de laboratoire.</p>
+            <ul class="smap-list"><li><span>B4</span>Déplacement inutile<b class="chip crit">Fausse alerte</b></li><li><span>C1</span>Carence non vue<b class="chip n">Aucun signal</b></li><li><span>D2</span>Risque non anticipé<b class="chip n">Aucun signal</b></li></ul>
+          </div>
+          <div class="smap-panel p-fir">
+            <p class="stat">3 sources</p>
+            <h3>Fausse alerte écartée, vrai problème trouvé</h3>
+            <p>Sur B4, les deux indices baissent ensemble en phase de développement des fruits et les conditions climatiques sont conformes : c'est physiologique, personne ne se déplace. Sur C1, l'analyse foliaire montre un potassium en retrait de 25 % sur la cible du stade.</p>
+            <p class="note"><b>Recommandation générée :</b> corriger le potassium sur C1 par fertigation avant la fin du stade. Le calibre du fruit est le premier poste affecté.</p>
+            <ul class="smap-list"><li><span>B4</span>Baisse physiologique<b class="chip ok">Aucune action</b></li><li><span>C1</span>Potassium −25 %<b class="chip crit">À corriger</b></li><li><span>D2</span>Pression cochenille<b class="chip warn">À surveiller</b></li></ul>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
@@ -80,12 +92,12 @@ METHODE = phero("vue-aerienne", "La méthode",
     <h2 class="h2 a2" style="transition-delay:.1s">Comment un écart devient une décision</h2>
     <p class="lede a2" style="transition-delay:.15s">Chaque variation suit le même chemin avant d'arriver dans votre synthèse du jour.</p>
   </div>
-  <div class="grid4">
-    <article class="card a2">{dots(1,"Étape 1 sur 4")}<div class="txt"><h3>Détecter</h3><p>Un indice satellite sort de sa tendance sur un secteur : vigueur, teneur en eau ou statut azoté.</p></div></article>
-    <article class="card a2" style="transition-delay:.1s">{dots(2,"Étape 2 sur 4")}<div class="txt"><h3>Replacer dans le contexte</h3><p>L'écart est comparé au stade phénologique de la culture et aux conditions climatiques de la période.</p></div></article>
-    <article class="card a2" style="transition-delay:.2s">{dots(3,"Étape 3 sur 4")}<div class="txt"><h3>Confronter aux mesures</h3><p>Les analyses de sol, foliaires et d'eau sont confrontées aux cibles du stade pour confirmer ou écarter une cause.</p></div></article>
-    <article class="card a2" style="transition-delay:.3s">{dots(4,"Étape 4 sur 4")}<div class="txt"><h3>Qualifier et recommander</h3><p>Normal : aucune action. À surveiller : suivi rapproché. À corriger : priorité et correction proposées, secteur par secteur.</p></div></article>
-  </div>
+  <ol class="engine" data-play>
+    <li class="eng-step"><span class="eng-n">1</span><h3>Détecter</h3><p>Un indice satellite sort de sa tendance sur un secteur : vigueur, teneur en eau ou statut azoté.</p><span class="eng-tag">Satellite</span></li>
+    <li class="eng-step"><span class="eng-n">2</span><h3>Replacer dans le contexte</h3><p>L'écart est comparé au stade phénologique de la culture et aux conditions climatiques de la période.</p><span class="eng-tag">Climat · stade</span></li>
+    <li class="eng-step"><span class="eng-n">3</span><h3>Confronter aux mesures</h3><p>Les analyses de sol, foliaires et d'eau sont confrontées aux cibles du stade pour confirmer ou écarter une cause.</p><span class="eng-tag">Laboratoire</span></li>
+    <li class="eng-step"><span class="eng-n">4</span><h3>Qualifier et recommander</h3><p>Chaque secteur reçoit un statut et, si besoin, la correction à apporter.</p><span class="eng-out"><b class="chip ok">Aucune action</b><b class="chip warn">À surveiller</b><b class="chip crit">À corriger</b></span></li>
+  </ol>
 </section>
 
 <section class="cta-wrap">
@@ -98,6 +110,24 @@ METHODE = phero("vue-aerienne", "La méthode",
       <h3>C'est l'avance que vous prenez sur un stress hydrique.</h3>
       <p>L'indice de teneur en eau détecte un déficit avant que la plante ne l'exprime visuellement. Quand vos équipes le voient au champ, il est déjà installé. Sur une culture d'export, cette semaine et demie se lit directement dans le calibre du fruit et dans le tonnage que vous pourrez engager.</p>
     </div>
+    <figure class="lead-chart" data-play>
+      <svg viewBox="0 0 1000 250" role="img" aria-label="Illustration : l'indice de teneur en eau franchit le seuil de stress environ neuf jours avant que le symptôme soit visible au champ">
+        <rect class="lc-win" x="232" y="24" width="430" height="176"/>
+        <line class="lc-grid" x1="40" y1="200" x2="980" y2="200"/>
+        <line class="lc-thr" x1="40" y1="112" x2="980" y2="112"/>
+        <text class="lc-t" x="976" y="104" text-anchor="end">Seuil de stress</text>
+        <path class="lc-curve" d="M40 52 C 130 54, 190 80, 232 112 S 420 170, 560 182 S 820 192, 980 194"/>
+        <circle class="lc-dot d1" cx="232" cy="112" r="7"/>
+        <line class="lc-mark" x1="662" y1="20" x2="662" y2="200"/>
+        <circle class="lc-dot d2" cx="662" cy="186" r="7"/>
+        <text class="lc-t b" x="232" y="12" text-anchor="middle">Détection Firmaty</text>
+        <text class="lc-t b" x="662" y="12" text-anchor="middle">Symptôme visible au champ</text>
+        <text class="lc-big" x="447" y="92" text-anchor="middle">7 à 10 jours d'avance</text>
+        <g class="lc-ax"><text x="40" y="228">J0</text><text x="232" y="228" text-anchor="middle">J+4</text><text x="662" y="228" text-anchor="middle">J+13</text><text x="980" y="228" text-anchor="end">J+20</text></g>
+        <text class="lc-t" x="40" y="40">Indice de teneur en eau</text>
+      </svg>
+      <figcaption>Illustration du principe, pas une mesure d'exploitation.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -122,6 +152,50 @@ METHODE = phero("vue-aerienne", "La méthode",
 ''' + cta()
 
 # ---------------------------------------------------------------- LA PLATEFORME
+
+SERVICES = [
+  ("Météo", "Climat et pression sanitaire",
+   "Conditions en temps réel, prévisions et recommandation d'irrigation calculée à partir de l'évapotranspiration et du déficit de pression de vapeur. La pression maladies et ravageurs est calculée en continu pour la culture et son stade en cours.",
+   "Sur le secteur B4, l'évapotranspiration cumulée atteint 32,1 mm sur cinq jours sans pluie annoncée. La plateforme conseille un apport modéré sur les créneaux de nuit et signale une pression cochenille en hausse.",
+   ["Historique","Prévisions 24h et 5j","Irrigation pilotée","Risques par stade"], "CLIMAT"),
+  ("Satellite", "Analyse satellite",
+   "Chaque secteur est suivi image après image, avec des seuils agronomiques qui distinguent l'optimal, l'acceptable et le critique. La tendance sur douze semaines révèle ce qu'une image isolée ne montrera jamais.",
+   "La vigueur de B4 recule de 12 % en douze semaines mais reste en zone optimale. La baisse conjointe des deux indices correspond à la réallocation des ressources vers le fruit. C1, lui, remonte en tête des priorités.",
+   ["Tendances","Stress hydrique","Santé végétale","Nutrition","Cartographie"], "SATELLITE"),
+  ("Analyses labo", "Analyses de laboratoire",
+   "Vos rapports sont importés et confrontés aux cibles de la culture. La plateforme détecte les antagonismes nutritionnels, ces blocages où un élément présent en quantité suffisante devient inaccessible à la plante à cause d'un autre.",
+   "Score de fertilité de 68/100 : six paramètres conformes, trois à surveiller et une action requise. Le potassium est à 25,3 % sous la cible du stade.",
+   ["Sol","Foliaire","Eau et sondes","Équilibre cationique","Conformité"], "LABO"),
+  ("Pilotage", "Pilotage de l'exploitation",
+   "La vue d'ensemble : secteurs configurés, services actifs, actions à traiter. Vous voyez d'un coup d'œil où en est chaque partie de l'exploitation et ce qui demande votre attention cette semaine.",
+   "340 hectares, 12 secteurs configurés, 11 services sur 12 actifs et 4 actions à traiter cette semaine.",
+   ["Connaissance du terrain","Surveillance","Nutrition et irrigation","Production"], "PILOTAGE"),
+]
+def scrolly():
+    scr = {"CLIMAT": CLIMAT, "SATELLITE": SATELLITE, "LABO": LABO, "PILOTAGE": PILOTAGE}
+    tabs = ''.join(f'<button type="button" role="tab" class="st-tab{" on" if i==0 else ""}" data-i="{i}" aria-selected="{"true" if i==0 else "false"}">{t[0]}</button>' for i, t in enumerate(SERVICES))
+    frames = ''.join(f'<div class="st-frame{" on" if i==0 else ""}" data-i="{i}">{screen(scr[t[5]], "Écran " + t[1] + ", données de démonstration")}</div>' for i, t in enumerate(SERVICES))
+    steps = ''
+    for i, (tab, title, text, ex, tg, key) in enumerate(SERVICES):
+        steps += f'''<article class="st-step{" on" if i==0 else ""}" data-i="{i}" id="service-{i+1}">
+      <span class="k">SERVICE 0{i+1} · {tab.upper()}</span>
+      <h2 class="h2">{title}</h2>
+      <p>{text}</p>
+      <div class="st-ex"><b>Exemple</b>{ex}</div>
+      {tags(tg)}
+      <div class="st-mobile">{screen(scr[key], "Écran " + title + ", données de démonstration")}</div>
+    </article>'''
+    return f'''<section class="scrolly" aria-label="Les quatre écrans de la plateforme">
+  <div class="st-sticky">
+    <div class="st-stage">
+      <div class="st-tabs" role="tablist" aria-label="Écrans">{tabs}<span class="st-ink" aria-hidden="true"></span></div>
+      <div class="st-frames">{frames}</div>
+      <div class="st-progress" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+  <div class="st-steps">{steps}</div>
+</section>
+'''
 def service_row(n, title, text, tag_list, scr, label, rev=False, extra=""):
     return f'''<section class="split{' rev' if rev else ''}">
   <div class="txt">
@@ -138,22 +212,7 @@ def service_row(n, title, text, tag_list, scr, label, rev=False, extra=""):
 PLATEFORME = phero("laboratoire", "La plateforme",
   "La plateforme, en quatre écrans",
   "Douze services agronomiques, un seul tableau de bord. Chaque secteur est configuré une fois, puis tout s'enchaîne.", "60% center") + '<main>' + \
-  service_row(1, "Climat et pression sanitaire",
-    "Conditions en temps réel, prévisions et recommandation d'irrigation calculée à partir de l'évapotranspiration et du déficit de pression de vapeur. La pression maladies et ravageurs est calculée en continu pour la culture et son stade en cours.",
-    ["Historique","Prévisions 24h et 5j","Irrigation pilotée","Risques par stade"], CLIMAT, "Écran Climat avec données de démonstration",
-    extra='<p class="sl" style="transition-delay:.2s">Exemple : sur le secteur B4, l\'évapotranspiration cumulée atteint 32,1 mm sur cinq jours sans pluie annoncée. La plateforme conseille un apport modéré sur les créneaux de nuit et signale une pression cochenille en hausse.</p>') + \
-  service_row(2, "Analyse satellite",
-    "Chaque secteur est suivi image après image, avec des seuils agronomiques qui distinguent l'optimal, l'acceptable et le critique. La tendance sur douze semaines révèle ce qu'une image isolée ne montrera jamais.",
-    ["Tendances","Stress hydrique","Santé végétale","Nutrition","Cartographie"], SATELLITE, "Écran Satellite avec données de démonstration", rev=True,
-    extra='<p class="sl" style="transition-delay:.2s">Exemple : la vigueur de B4 recule de 12 % en douze semaines mais reste en zone optimale. La baisse conjointe des deux indices correspond à la réallocation des ressources vers le fruit. C1, lui, remonte en tête des priorités.</p>') + \
-  service_row(3, "Analyses de laboratoire",
-    "Vos rapports sont importés et confrontés aux cibles de la culture. La plateforme détecte les antagonismes nutritionnels, ces blocages où un élément présent en quantité suffisante devient inaccessible à la plante à cause d'un autre.",
-    ["Sol","Foliaire","Eau et sondes","Équilibre cationique","Conformité"], LABO, "Écran Laboratoire avec données de démonstration",
-    extra='<p class="sl" style="transition-delay:.2s">Exemple : score de fertilité de 68/100, avec six paramètres conformes, trois à surveiller et une action requise. Le potassium est à 25,3 % sous la cible du stade.</p>') + \
-  service_row(4, "Pilotage de l'exploitation",
-    "La vue d'ensemble : secteurs configurés, services actifs, actions à traiter. Vous voyez d'un coup d'œil où en est chaque partie de l'exploitation et ce qui demande votre attention cette semaine.",
-    ["Connaissance du terrain","Surveillance","Nutrition et irrigation","Production"], PILOTAGE, "Écran Pilotage avec données de démonstration", rev=True,
-    extra='<p class="sl" style="transition-delay:.2s">Exemple : 340 hectares, 12 secteurs configurés, 11 services sur 12 actifs et 4 actions à traiter cette semaine.</p>') + f'''
+  scrolly() + f'''
 <p class="demo-note">Interfaces reconstituées avec des données de démonstration. Aucune donnée d'exploitation réelle n'est affichée.</p>
 
 <section class="wrap20 sec-gap">
@@ -189,6 +248,44 @@ PLATEFORME = phero("laboratoire", "La plateforme",
 ''' + cta()
 
 # ---------------------------------------------------------------- POUR QUI
+
+AUD = [
+  ("cooperatives","Coopératives et groupements","prelevement-sol","Agronome prélevant un échantillon de sol entre deux rangs d'agrumes","35% center",
+   "Un compte, tous les adhérents","Vous voyez quelles exploitations décrochent et vous envoyez votre technicien là où il sert.",
+   "Le technicien apprend le problème quand l'adhérent appelle. Souvent trop tard.",
+   "Les secteurs qui décrochent remontent d'eux-mêmes, avant l'appel de l'adhérent.",
+   ["Vue d'ensemble de toutes les exploitations adhérentes","Priorisation des visites du technicien","Historique daté pour chaque adhérent"]),
+  ("domaines","Domaines, stations et exportateurs","station","Caisses d'oranges dans une station de conditionnement","center",
+   "Vos volumes se jouent des mois avant la récolte","Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.",
+   "La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.",
+   "Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.",
+   ["Suivi du calibre et du tonnage à engager","Avance de 7 à 10 jours sur un stress hydrique","Corrections ciblées secteur par secteur"]),
+  ("agregateurs","Agrégateurs, bureaux d'études, assurance","vue-aerienne","Vue aérienne de parcelles de vergers","center",
+   "Des preuves, pas du déclaratif","Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.",
+   "La preuve repose sur du déclaratif et des visites ponctuelles.",
+   "Chaque constat s'appuie sur des images datées et des mesures rattachées au secteur.",
+   ["Historique satellite rétroactif sur les mois écoulés","Mesures horodatées et traçables","Analyses rattachées au secteur concerné"]),
+]
+def audience_tabs():
+    tabs = ''.join(f'<button type="button" role="tab" id="t-{k}" aria-controls="p-{k}" aria-selected="{"true" if i==0 else "false"}" class="aud-tab{" on" if i==0 else ""}" data-i="{i}"><span class="aud-n">0{i+1}</span>{lab}</button>' for i,(k,lab,*_) in enumerate(AUD))
+    imgs = ''.join(f'<img class="aud-img{" on" if i==0 else ""}" data-i="{i}" src="img/{img}.jpg" alt="{alt}" loading="lazy" style="object-position:{pos}">' for i,(k,lab,img,alt,pos,*_) in enumerate(AUD))
+    panels = ''
+    for i,(k,lab,img,alt,pos,title,intro,today,withf,gets) in enumerate(AUD):
+        panels += f'''<div class="aud-panel{" on" if i==0 else ""}" role="tabpanel" id="p-{k}" aria-labelledby="t-{k}" data-i="{i}"{"" if i==0 else " hidden"}>
+        <p class="eyebrow">{lab}</p>
+        <h2 class="h2">{title}</h2>
+        <p class="aud-intro">{intro}</p>
+        <div class="cmp"><div class="today"><b>Aujourd'hui</b>{today}</div><div class="with"><b>Avec Firmaty</b>{withf}</div></div>
+        {bullets(gets)}
+      </div>'''
+    return f'''<section class="aud a2">
+  <div class="aud-tabs" role="tablist" aria-label="Profils">{tabs}</div>
+  <div class="aud-body">
+    <div class="aud-media">{imgs}</div>
+    <div class="aud-panels">{panels}</div>
+  </div>
+</section>
+'''
 def audience(img, alt, eyebrow, title, intro, today, withf, gets, rev=False, pos="center"):
     return f'''<section class="split{' rev' if rev else ''}">
   <div class="txt">
@@ -208,21 +305,7 @@ def audience(img, alt, eyebrow, title, intro, today, withf, gets, rev=False, pos
 POURQUI = phero("station", "Pour qui",
   "Conçu pour ceux qui ne peuvent plus tout parcourir",
   "Coopérative de deux cents adhérents ou domaine d'un seul tenant, la question est la même : à partir d'une certaine surface, vous ne pouvez plus tout voir. C'est là que la détection à distance change l'économie de votre exploitation.") + '<main>' + \
-  audience("prelevement-sol","Agronome prélevant un échantillon de sol entre deux rangs d'agrumes","Coopératives et groupements","Un compte, tous les adhérents",
-    "Vous voyez quelles exploitations décrochent et vous envoyez votre technicien là où il sert.",
-    "Le technicien apprend le problème quand l'adhérent appelle. Souvent trop tard.",
-    "Les secteurs qui décrochent remontent d'eux-mêmes, avant l'appel de l'adhérent.",
-    ["Vue d'ensemble de toutes les exploitations adhérentes","Priorisation des visites du technicien","Historique daté pour chaque adhérent"]) + \
-  audience("station","Caisses d'oranges dans une station de conditionnement","Domaines, stations et exportateurs","Vos volumes se jouent des mois avant la récolte",
-    "Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.",
-    "La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.",
-    "Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.",
-    ["Suivi du calibre et du tonnage à engager","Avance de 7 à 10 jours sur un stress hydrique","Corrections ciblées secteur par secteur"], rev=True) + \
-  audience("vue-aerienne","Vue aérienne de parcelles de vergers","Agrégateurs, bureaux d'études et assurance récolte","Des preuves, pas du déclaratif",
-    "Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.",
-    "La preuve repose sur du déclaratif et des visites ponctuelles.",
-    "Chaque constat s'appuie sur des images datées et des mesures rattachées au secteur.",
-    ["Historique satellite rétroactif sur les mois écoulés","Mesures horodatées et traçables","Analyses rattachées au secteur concerné"]) + f'''
+  audience_tabs() + f'''
 <section class="wrap20 sec-gap">
   <div class="box">
     <p class="eyebrow a2">Comment ça se passe</p>
@@ -263,6 +346,7 @@ GALERIE = phero("goutte-a-goutte", "Galerie",
     <p class="eyebrow a2">Au champ et à l'écran</p>
     <h2 class="h2 a2" style="transition-delay:.1s">Ce que nous observons, ce que vous voyez</h2>
     <p class="lede a2" style="transition-delay:.15s">Cliquez sur une photo pour l'agrandir.</p>
+    <div class="chips a2" role="group" aria-label="Filtrer la galerie"><button type="button" class="chip-btn on" data-f="all" aria-pressed="true">Tout</button><button type="button" class="chip-btn" data-f="photo" aria-pressed="false">Au champ</button><button type="button" class="chip-btn" data-f="scr" aria-pressed="false">Écrans</button></div>
   </div>
   <div class="masonry">
     {fig("hero","Verger d'agrumes au coucher du soleil",1536,1024,"70% center")}
@@ -298,6 +382,13 @@ QUESTIONS = phero("prelevement-sol", "Questions",
   "Tarification, matériel, imagerie, cultures, données : les réponses aux questions qui reviennent avant chaque démonstration.", "35% center") + f'''
 <main>
 <section class="sec faqs">
+  <div class="faq-search a2">
+    <label for="q" class="vh">Rechercher dans les questions</label>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Rechercher : tarif, capteurs, Copernicus, données…" autocomplete="off">
+    <span class="faq-count" aria-live="polite"></span>
+  </div>
+  <p class="faq-empty" hidden>Aucune réponse ne correspond. Posez votre question dans votre <a href="contact.html">demande de démonstration</a>.</p>
   <div class="faq-group">
     <div class="faq-side"><p class="eyebrow a2">Démarrer</p><h2 class="h3 a2">Tarifs et mise en route</h2></div>
     <div class="qa">

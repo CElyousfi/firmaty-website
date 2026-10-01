@@ -33,44 +33,30 @@
   <h1 class="a1">Conçu pour ceux qui ne peuvent plus tout parcourir</h1>
   <p class="lead a1">Coopérative de deux cents adhérents ou domaine d'un seul tenant, la question est la même : à partir d'une certaine surface, vous ne pouvez plus tout voir. C'est là que la détection à distance change l'économie de votre exploitation.</p>
 </header>
-<main id="contenu"><section class="split">
-  <div class="txt">
-    <p class="eyebrow sl">Coopératives et groupements</p>
-    <h2 class="h2 sl" style="transition-delay:.1s">Un compte, tous les adhérents</h2>
-    <p class="sl" style="transition-delay:.2s">Vous voyez quelles exploitations décrochent et vous envoyez votre technicien là où il sert.</p>
-    <div class="cmp sl" style="transition-delay:.2s">
-      <div class="today"><b>Aujourd'hui</b>Le technicien apprend le problème quand l'adhérent appelle. Souvent trop tard.</div>
-      <div class="with"><b>Avec Firmaty</b>Les secteurs qui décrochent remontent d'eux-mêmes, avant l'appel de l'adhérent.</div>
-    </div>
-    <div class="sl" style="transition-delay:.2s"><ul class="ticks"><li>Vue d'ensemble de toutes les exploitations adhérentes</li><li>Priorisation des visites du technicien</li><li>Historique daté pour chaque adhérent</li></ul></div>
+<main id="contenu"><section class="aud a2">
+  <div class="aud-tabs" role="tablist" aria-label="Profils"><button type="button" role="tab" id="t-cooperatives" aria-controls="p-cooperatives" aria-selected="true" class="aud-tab on" data-i="0"><span class="aud-n">01</span>Coopératives et groupements</button><button type="button" role="tab" id="t-domaines" aria-controls="p-domaines" aria-selected="false" class="aud-tab" data-i="1"><span class="aud-n">02</span>Domaines, stations et exportateurs</button><button type="button" role="tab" id="t-agregateurs" aria-controls="p-agregateurs" aria-selected="false" class="aud-tab" data-i="2"><span class="aud-n">03</span>Agrégateurs, bureaux d'études, assurance</button></div>
+  <div class="aud-body">
+    <div class="aud-media"><img class="aud-img on" data-i="0" src="img/prelevement-sol.jpg" alt="Agronome prélevant un échantillon de sol entre deux rangs d'agrumes" loading="lazy" style="object-position:35% center"><img class="aud-img" data-i="1" src="img/station.jpg" alt="Caisses d'oranges dans une station de conditionnement" loading="lazy" style="object-position:center"><img class="aud-img" data-i="2" src="img/vue-aerienne.jpg" alt="Vue aérienne de parcelles de vergers" loading="lazy" style="object-position:center"></div>
+    <div class="aud-panels"><div class="aud-panel on" role="tabpanel" id="p-cooperatives" aria-labelledby="t-cooperatives" data-i="0">
+        <p class="eyebrow">Coopératives et groupements</p>
+        <h2 class="h2">Un compte, tous les adhérents</h2>
+        <p class="aud-intro">Vous voyez quelles exploitations décrochent et vous envoyez votre technicien là où il sert.</p>
+        <div class="cmp"><div class="today"><b>Aujourd'hui</b>Le technicien apprend le problème quand l'adhérent appelle. Souvent trop tard.</div><div class="with"><b>Avec Firmaty</b>Les secteurs qui décrochent remontent d'eux-mêmes, avant l'appel de l'adhérent.</div></div>
+        <ul class="ticks"><li>Vue d'ensemble de toutes les exploitations adhérentes</li><li>Priorisation des visites du technicien</li><li>Historique daté pour chaque adhérent</li></ul>
+      </div><div class="aud-panel" role="tabpanel" id="p-domaines" aria-labelledby="t-domaines" data-i="1" hidden>
+        <p class="eyebrow">Domaines, stations et exportateurs</p>
+        <h2 class="h2">Vos volumes se jouent des mois avant la récolte</h2>
+        <p class="aud-intro">Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.</p>
+        <div class="cmp"><div class="today"><b>Aujourd'hui</b>La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.</div><div class="with"><b>Avec Firmaty</b>Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.</div></div>
+        <ul class="ticks"><li>Suivi du calibre et du tonnage à engager</li><li>Avance de 7 à 10 jours sur un stress hydrique</li><li>Corrections ciblées secteur par secteur</li></ul>
+      </div><div class="aud-panel" role="tabpanel" id="p-agregateurs" aria-labelledby="t-agregateurs" data-i="2" hidden>
+        <p class="eyebrow">Agrégateurs, bureaux d'études, assurance</p>
+        <h2 class="h2">Des preuves, pas du déclaratif</h2>
+        <p class="aud-intro">Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.</p>
+        <div class="cmp"><div class="today"><b>Aujourd'hui</b>La preuve repose sur du déclaratif et des visites ponctuelles.</div><div class="with"><b>Avec Firmaty</b>Chaque constat s'appuie sur des images datées et des mesures rattachées au secteur.</div></div>
+        <ul class="ticks"><li>Historique satellite rétroactif sur les mois écoulés</li><li>Mesures horodatées et traçables</li><li>Analyses rattachées au secteur concerné</li></ul>
+      </div></div>
   </div>
-  <div class="media fi"><img src="img/prelevement-sol.jpg" alt="Agronome prélevant un échantillon de sol entre deux rangs d'agrumes" loading="lazy" style="object-position:center"></div>
-</section>
-<section class="split rev">
-  <div class="txt">
-    <p class="eyebrow sl">Domaines, stations et exportateurs</p>
-    <h2 class="h2 sl" style="transition-delay:.1s">Vos volumes se jouent des mois avant la récolte</h2>
-    <p class="sl" style="transition-delay:.2s">Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.</p>
-    <div class="cmp sl" style="transition-delay:.2s">
-      <div class="today"><b>Aujourd'hui</b>La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.</div>
-      <div class="with"><b>Avec Firmaty</b>Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.</div>
-    </div>
-    <div class="sl" style="transition-delay:.2s"><ul class="ticks"><li>Suivi du calibre et du tonnage à engager</li><li>Avance de 7 à 10 jours sur un stress hydrique</li><li>Corrections ciblées secteur par secteur</li></ul></div>
-  </div>
-  <div class="media fi"><img src="img/station.jpg" alt="Caisses d'oranges dans une station de conditionnement" loading="lazy" style="object-position:center"></div>
-</section>
-<section class="split">
-  <div class="txt">
-    <p class="eyebrow sl">Agrégateurs, bureaux d'études et assurance récolte</p>
-    <h2 class="h2 sl" style="transition-delay:.1s">Des preuves, pas du déclaratif</h2>
-    <p class="sl" style="transition-delay:.2s">Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.</p>
-    <div class="cmp sl" style="transition-delay:.2s">
-      <div class="today"><b>Aujourd'hui</b>La preuve repose sur du déclaratif et des visites ponctuelles.</div>
-      <div class="with"><b>Avec Firmaty</b>Chaque constat s'appuie sur des images datées et des mesures rattachées au secteur.</div>
-    </div>
-    <div class="sl" style="transition-delay:.2s"><ul class="ticks"><li>Historique satellite rétroactif sur les mois écoulés</li><li>Mesures horodatées et traçables</li><li>Analyses rattachées au secteur concerné</li></ul></div>
-  </div>
-  <div class="media fi"><img src="img/vue-aerienne.jpg" alt="Vue aérienne de parcelles de vergers" loading="lazy" style="object-position:center"></div>
 </section>
 
 <section class="wrap20 sec-gap">
