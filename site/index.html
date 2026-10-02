@@ -46,33 +46,69 @@
 </header>
 
 <main id="contenu">
-<section class="mission" id="mission">
-  <div class="mission-txt">
-    <p class="eyebrow sl">Notre mission</p>
-    <h2 class="h2 sl" style="transition-delay:.1s">Démocratiser l'agriculture de précision</h2>
-    <p class="sl" style="transition-delay:.2s">Fondée en 2026, Firmaty s'est donnée pour mission de <b>rendre l'agriculture de précision accessible à tous</b>, des petites exploitations familiales aux grandes structures agricoles.</p>
-    <p class="sl" style="transition-delay:.2s">Nous croyons que l'avenir de l'agriculture passe par une utilisation intelligente des données satellitaires et de l'intelligence artificielle. En combinant l'imagerie Sentinel-2 avec des algorithmes d'analyse avancés, nous permettons à chaque agriculteur de :</p>
-    <ul class="mission-list sl" style="transition-delay:.25s">
-      <li><span>01</span><div><b>Détecter 15 jours avant</b>Repérer les problèmes avant qu'ils ne deviennent visibles au champ.</div></li>
-      <li><span>02</span><div><b>Réduire les coûts</b>Optimiser l'irrigation et la fertilisation au besoin réel de chaque secteur.</div></li>
-      <li><span>03</span><div><b>Produire en préservant</b>Augmenter les rendements tout en préservant l'environnement.</div></li>
-      <li><span>04</span><div><b>Décider sur des faits</b>Prendre des décisions basées sur des données objectives.</div></li>
-    </ul>
-    <a class="btn btn-blue sl" style="transition-delay:.3s;margin-top:30px" href="mission.html">Découvrir notre mission</a>
-  </div>
-  <div class="mission-fig a2">
-    <img class="mf-leaf" src="img/logo-feuille-blanc.png" alt="" aria-hidden="true">
-    <p class="mf-kicker">Phase pilote · Maroc</p>
-    <div class="mf-grid">
-      <div><b data-count="20">20</b><span>exploitations pilotes</span></div>
-      <div><b data-count="200" data-suffix=" ha">200 ha</b><span>suivis aujourd'hui</span></div>
-      <div class="wide"><b data-count="1000" data-sep="1">1 000+</b><span>fermes accompagnées d'ici deux ans</span></div>
+<section class="f3" id="mission" aria-labelledby="f3-title">
+  <div class="f3-head-row">
+    <div>
+      <p class="eyebrow sl">Notre mission</p>
+      <h2 class="h2 sl" id="f3-title" style="transition-delay:.1s">Démocratiser l'agriculture de précision</h2>
     </div>
-    <div class="mf-track" aria-label="Progression vers l'objectif : 20 fermes sur 1 000"><i style="--p:2%"></i><span>2026 · création</span><span>Objectif · 1 000 fermes</span></div>
-    <p class="mf-quote">Notre objectif : démocratiser l'accès à l'agriculture de précision au Maroc.</p>
-    <a class="btn btn-cream" href="contact.html">Rejoindre la phase pilote</a>
+    <div class="f3-intro sl" style="transition-delay:.2s">
+      <p>Fondée en 2026, Firmaty s'est donnée pour mission de <b>rendre l'agriculture de précision accessible à tous</b>, des petites exploitations familiales aux grandes structures agricoles.</p>
+      <p class="f3-tip"><i aria-hidden="true">+</i>Explorez l'exploitation : chaque point révèle ce que Firmaty change sur le terrain.</p>
+    </div>
+  </div>
+  <div class="f3-frame">
+    <img class="f3-poster" src="img/mission-3d.jpg" alt="Exploitation agricole en 3D : parcelles de blé, silos, bassin d'irrigation et une parcelle analysée par satellite" loading="lazy">
+    <div class="f3-stage" aria-hidden="true"></div>
+    <div class="f3-haze" aria-hidden="true"></div>
+    <div class="f3-hot"></div>
+
+    <div class="f3-hud">
+      <div class="f3-card">
+        <p>Nous accompagnons chaque agriculteur, de la première image satellite à la récolte</p>
+        <button class="f3-plus" type="button" aria-expanded="false" aria-controls="f3-more" aria-label="Lire notre mission"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></button>
+        <div class="f3-more" id="f3-more">
+          <p>Nous croyons que l'avenir de l'agriculture passe par une utilisation intelligente des données satellitaires et de l'intelligence artificielle. En combinant l'imagerie Sentinel-2 avec des algorithmes d'analyse avancés, nous permettons à chaque agriculteur de détecter les problèmes 15 jours avant qu'ils ne soient visibles, de réduire ses coûts et de produire en préservant l'environnement.</p>
+          <a href="mission.html">Découvrir notre mission <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="f3-panel">
+        <h3>Phase pilote · Maroc</h3>
+        <div class="f3-cells">
+          <div><small>Exploitations pilotes</small><b data-count="20">20</b></div>
+          <div><small>Surface suivie</small><b data-count="200" data-suffix=" ha">200 ha</b></div>
+          <div><small>Fondée en</small><b>2026</b></div>
+          <div><small>Satellite</small><b>Sentinel-2</b></div>
+          <div><small>Résolution</small><b>10 m</b></div>
+          <div><small>Revisite</small><b>5 jours</b></div>
+        </div>
+      </div>
+
+      <div class="f3-panel">
+        <h3>Parcelle C1 · scan en cours</h3>
+        <div class="f3-rows">
+          <div><span><small>Vigueur NDVI</small><b class="f3-ndvi">0,71</b></span><svg class="f3-spark" viewBox="0 0 120 26" preserveAspectRatio="none"><path/></svg></div>
+          <div><span><small>Eau du sol</small><b class="f3-eau">31 %</b></span><svg class="f3-spark" viewBox="0 0 120 26" preserveAspectRatio="none"><path/></svg></div>
+          <div><span><small>Avance de détection</small><b>15 jours</b></span><svg class="f3-spark" viewBox="0 0 120 26" preserveAspectRatio="none"><path/></svg></div>
+        </div>
+      </div>
+
+      <div class="f3-panel">
+        <h3>Objectif · deux ans</h3>
+        <div class="f3-goal">
+          <p class="f3-sub">Fermes accompagnées</p>
+          <div class="f3-goal-n"><b data-count="1000" data-sep="1" data-suffix="+">1 000+</b><span>fermes accompagnées d'ici deux ans</span></div>
+          <div class="f3-bar" role="img" aria-label="20 exploitations aujourd'hui sur un objectif de 1 000"><i></i></div>
+          <div class="f3-goal-k"><span><small>Aujourd'hui</small>20</span><span><small>Objectif</small>1 000+</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="f3-time" aria-hidden="true"><div class="f3-ticks"></div><div class="f3-months"></div><i class="f3-head"></i></div>
   </div>
 </section>
+<script src="farm3d.js" defer></script>
 
 <section class="wrap20" id="services">
   <div class="box">
