@@ -31,7 +31,7 @@ for fname, title, body, d in [
     ('mission.html', 'Notre mission · Firmaty', pages.MISSION, "Fondée en 2026, Firmaty veut rendre l'agriculture de précision accessible à tous : notre mission, nos convictions et notre ambition."),
     ('services.html', 'Services · Firmaty', pages.SERVICES, "Diagnostic, surveillance et alertes, irrigation, nutrition, accompagnement : les services agronomiques de Firmaty."),
     ('ressources.html', 'Ressources · Firmaty', pages.RESSOURCES, "Guides, références et formations pour comprendre l'agriculture de précision et l'imagerie satellite."),
-    ('pour-qui.html', 'Pour qui · Firmaty', pages.POURQUI, "Coopératives, domaines, stations, exportateurs, agrégateurs et assureurs : ce que Firmaty change pour chacun."),
+    ('pour-qui.html', 'Pour qui · Firmaty', pages.POURQUI, "Agriculteurs individuels, coopératives, domaines, exportateurs, agrégateurs et assureurs : ce que Firmaty change pour chacun."),
     ('galerie.html', 'Galerie · Firmaty', pages.GALERIE, "Photos du terrain et écrans de la plateforme Firmaty."),
     ('questions.html', 'Questions · Firmaty', pages.QUESTIONS, "Tarification, matériel, imagerie, cultures et données : les réponses aux questions fréquentes."),
     ('tarifs.html', 'Tarifs · Firmaty', pages.TARIFS, "Les offres Firmaty : diagnostic, exploitation et coopérative, et ce qui détermine le tarif."),

@@ -267,17 +267,22 @@ PLATEFORME = phero("laboratoire", "La plateforme",
 # ---------------------------------------------------------------- POUR QUI
 
 AUD = [
-  ("cooperatives","Coopératives et groupements","prelevement-sol","Agronome prélevant un échantillon de sol entre deux rangs d'agrumes","35% center",
+  ("agriculteurs","Agriculteurs individuels","situ-climat","Agriculteur consultant l'écran Climat de Firmaty sur son téléphone, au pied d'un jeune agrume","34% center",
+   "Votre exploitation, suivie comme celle des grands","Vous cultivez seul ou en famille, sur quelques hectares ou quelques dizaines. Firmaty vous donne la même lecture de vos parcelles que les grandes structures, sans capteur à installer et sans équipe technique.",
+   "Vous parcourez vos parcelles quand vous le pouvez. Un stress ou une carence se voit quand il est déjà installé.",
+   "Une alerte sur votre téléphone vous dit quel secteur regarder et quoi faire, jusqu'à 15 jours avant que la plante ne l'exprime.",
+   ["Aucun capteur ni matériel à acheter","Des recommandations claires pour l'irrigation et la fertilisation","Moins d'eau et d'engrais gaspillés, des rendements préservés"]),
+  ("cooperatives","Coopératives","prelevement-sol","Agronome prélevant un échantillon de sol entre deux rangs d'agrumes","35% center",
    "Un compte, tous les adhérents","Vous voyez quelles exploitations décrochent et vous envoyez votre technicien là où il sert.",
    "Le technicien apprend le problème quand l'adhérent appelle. Souvent trop tard.",
    "Les secteurs qui décrochent remontent d'eux-mêmes, avant l'appel de l'adhérent.",
    ["Vue d'ensemble de toutes les exploitations adhérentes","Priorisation des visites du technicien","Historique daté pour chaque adhérent"]),
-  ("domaines","Domaines, stations et exportateurs","station","Caisses d'oranges dans une station de conditionnement","center",
+  ("domaines","Domaines et exportateurs","station","Caisses d'oranges dans une station de conditionnement","center",
    "Vos volumes se jouent des mois avant la récolte","Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.",
    "La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.",
    "Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.",
    ["Suivi du calibre et du tonnage à engager","Jusqu'à 15 jours d'avance sur un stress hydrique","Corrections ciblées secteur par secteur"]),
-  ("agregateurs","Agrégateurs, bureaux d'études, assurance","vue-aerienne","Vue aérienne de parcelles de vergers","center",
+  ("agregateurs","Agrégateurs et assureurs","vue-aerienne","Vue aérienne de parcelles de vergers","center",
    "Des preuves, pas du déclaratif","Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.",
    "La preuve repose sur du déclaratif et des visites ponctuelles.",
    "Chaque constat s'appuie sur des images datées et des mesures rattachées au secteur.",
@@ -322,7 +327,7 @@ def audience(img, alt, eyebrow, title, intro, today, withf, gets, rev=False, pos
 
 POURQUI = phero("station", "Pour qui",
   "Conçu pour ceux qui ne peuvent plus tout parcourir",
-  "Coopérative de deux cents adhérents ou domaine d'un seul tenant, la question est la même : à partir d'une certaine surface, vous ne pouvez plus tout voir. C'est là que la détection à distance change l'économie de votre exploitation.") + '<main>' + \
+  "Agriculteur individuel, coopérative de deux cents adhérents ou domaine d'un seul tenant, la question est la même : à partir d'une certaine surface, vous ne pouvez plus tout voir. C'est là que la détection à distance change l'économie de votre exploitation.") + '<main>' + \
   audience_tabs() + f'''
 <section class="wrap20 sec-gap">
   <div class="box">
@@ -466,7 +471,7 @@ CONTACT = phero("avocat", "Démonstration",
         <div class="f"><label for="nom">Nom et prénom</label><input id="nom" name="nom" placeholder="Votre nom complet" autocomplete="name"></div>
         <div class="f"><label for="fonction">Fonction</label><input id="fonction" name="fonction" placeholder="Directeur technique, agronome…"></div>
         <div class="f"><label for="structure">Structure</label><input id="structure" name="structure" placeholder="Exploitation ou organisme" autocomplete="organization"></div>
-        <div class="f"><label for="type">Type de structure</label><select id="type" name="type"><option value="">Sélectionner</option><option>Coopérative ou groupement</option><option>Station de conditionnement ou exportateur</option><option>Domaine agricole</option><option>Agrégateur ou bureau d'études</option><option>Assurance ou financement</option><option>Autre</option></select></div>
+        <div class="f"><label for="type">Type de structure</label><select id="type" name="type"><option value="">Sélectionner</option><option>Agriculteur individuel</option><option>Coopérative ou groupement</option><option>Station de conditionnement ou exportateur</option><option>Domaine agricole</option><option>Agrégateur ou bureau d'études</option><option>Assurance ou financement</option><option>Autre</option></select></div>
         <div class="f"><label for="surface">Surface pilotée</label><select id="surface" name="surface"><option value="">Sélectionner</option><option>Moins de 50 ha</option><option>50 à 200 ha</option><option>200 à 1 000 ha</option><option>Plus de 1 000 ha</option></select></div>
         <div class="f"><label for="cultures">Cultures principales</label><input id="cultures" name="cultures" placeholder="Agrumes, avocat, olivier…"></div>
         <div class="f"><label for="region">Région</label><input id="region" name="region" placeholder="Souss-Massa, Gharb…"></div>
@@ -562,7 +567,7 @@ TARIFS = phero("station", "Tarifs",
     {offer("Diagnostic", "Pour découvrir ce que vos parcelles disent déjà", "Sur devis", "analyse ponctuelle",
       ["Délimitation de vos secteurs à distance","Historique satellite rétroactif sur les mois écoulés","Croisement avec le climat de la période","Intégration de vos analyses existantes","Restitution commentée avec un agronome"],
       "Demander un diagnostic", note="Déduit de votre abonnement si vous continuez.")}
-    {offer("Exploitation", "Pour les domaines, stations et exportateurs", "Sur devis", "par hectare et par an",
+    {offer("Exploitation", "Pour les agriculteurs, domaines, stations et exportateurs", "Sur devis", "par hectare et par an",
       ["Les quatre écrans : Climat, Satellite, Laboratoire, Pilotage","Synthèse du jour et actions secteur par secteur","Recommandations d'irrigation et de fertilisation","Alertes maladies et ravageurs par stade","Accompagnement à la mise en route"],
       "Demander une démo", featured=True)}
     {offer("Coopérative", "Pour les coopératives, agrégateurs et assureurs", "Sur devis", "selon le nombre d'adhérents",
