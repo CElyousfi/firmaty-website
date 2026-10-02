@@ -35,7 +35,7 @@ PHONE_CLIMAT = """<div class="ph">
 PHONE_CSS = """.ph{height:100%;display:flex;flex-direction:column;gap:12px;padding:0 18px 0;background:#fff;color:#274B9C;font-family:'Noto Sans',sans-serif}
 .ph-status{display:flex;justify-content:space-between;font-size:14px;padding:14px 4px 0}.ph-status span{font-size:11px;letter-spacing:1px}
 .ph-head{display:flex;align-items:center;gap:12px;margin-top:4px}.ph-head b{display:block;font-family:'Rethink Sans',sans-serif;font-size:24px;line-height:1.1}.ph-head small{font-size:13.5px;opacity:.65}
-.ph-logo{width:40px;height:40px;border-radius:12px;background:#274B9C url(file://LOGO) center/70% no-repeat}
+.ph-logo{width:40px;height:40px;border-radius:12px;background:url(file://LOGO) center/100% no-repeat}
 .ph-now{display:flex;justify-content:space-between;align-items:center;background:#F9F4E6;border-radius:18px;padding:14px 16px}
 .ph-temp{font-family:'Rethink Sans',sans-serif;font-weight:700;font-size:54px;line-height:1}.ph-now small{display:block;font-size:13px;opacity:.7;margin-top:4px}
 .ph-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ph-kpis div{background:#FFFBF3;border:1px solid rgba(39,75,156,.1);border-radius:14px;padding:10px 12px}
@@ -51,7 +51,7 @@ PHONE_CSS = """.ph{height:100%;display:flex;flex-direction:column;gap:12px;paddi
 
 def page(inner, w, h, chrome, mobile):
     if inner == "PHONE":
-        css = PHONE_CSS.replace("LOGO", os.path.join(ROOT, 'img', 'logo-symbole-blanc.png'))
+        css = PHONE_CSS.replace("LOGO", os.path.join(ROOT, 'img', 'icon-512.png'))
         return (f'<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="file://{CSS}"><style>'
                 f'html,body{{margin:0;width:{w}px;height:{h}px;overflow:hidden;background:#fff}}{css}</style></head><body>{PHONE_CLIMAT}</body></html>')
     if not chrome:

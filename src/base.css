@@ -38,7 +38,9 @@ p{margin:0}
 .bar{pointer-events:auto;max-width:1400px;margin:0 auto;height:76px;background:var(--cream);border-radius:40px;display:flex;align-items:center;justify-content:space-between;padding:0 15px 0 30px;transition:box-shadow .3s}
 .hdr.stuck .bar{box-shadow:0 8px 30px rgba(39,75,156,.12)}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue)}
-.logo img{height:56px;width:auto;display:block}
+.logo .leaf{width:46px;height:46px;display:block}
+.logo b{font-family:var(--display);font-size:34px;line-height:1;font-weight:700;letter-spacing:-.5px}
+.logo{gap:10px}
 
 .links{display:flex;align-items:center;list-style:none;margin:0;padding:0}
 .links a{display:block;padding:13px 16px;text-decoration:none;font-size:17px;line-height:26px}
@@ -191,7 +193,7 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 10px}
 .foot-wrap{padding:0 20px;max-width:1440px;margin:40px auto 0;position:relative}
 .foot{background:var(--sand);border-radius:40px;padding:45px 30px 60px}
 .foot .grid{display:grid;grid-template-columns:680px 187px 296px 136px;justify-content:space-between;gap:20px}
-.foot .logo img{height:58px}
+.foot .logo .leaf{width:48px;height:48px}.foot .logo b{font-size:36px}
 
 .foot p{font-size:13.5px;line-height:21px}
 .ft-text{margin-top:40px;display:flex;flex-direction:column;gap:14px;max-width:376px}
@@ -292,7 +294,7 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 10px}
   body{font-size:14.5px;line-height:23px}
   .hdr{padding:calc(env(safe-area-inset-top,0px) + 14px) 14px 0}
   .bar{height:60px;padding:0 8px 0 18px}
-  .logo img{height:40px}
+  .logo .leaf{width:34px;height:34px}.logo b{font-size:25px}
   .links .cta{display:none}
   .drop{left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 84px)}
   .hero{padding:0 20px 80px}

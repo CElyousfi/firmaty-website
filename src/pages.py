@@ -528,3 +528,91 @@ COOKIES = legal("Cookies", "Cookies", "Ce que le site dépose, ou plutôt ne dé
   ("Ce qui peut être échangé", "<p>Pour afficher les pages, votre navigateur contacte notre hébergeur (Vercel) et le service de polices Google Fonts. Ces échanges techniques ne servent pas à vous suivre d'un site à l'autre.</p>"),
   ("Si cela change", "<p>Si nous ajoutons un jour un outil de mesure d'audience, cette page sera mise à jour et votre accord sera demandé lorsque la loi l'exige.</p>"),
 ])
+
+
+# ---------------------------------------------------------------- TARIFS
+def offer(name, who, price, unit, items, cta, featured=False, note=""):
+    li = ''.join(f'<li>{i}</li>' for i in items)
+    return f'''<article class="offer a2{' feat' if featured else ''}">
+      {'<span class="offer-badge">Le plus choisi</span>' if featured else ''}
+      <h3>{name}</h3><p class="offer-who">{who}</p>
+      <p class="offer-price">{price}<small>{unit}</small></p>
+      <ul class="ticks">{li}</ul>
+      {f'<p class="offer-note">{note}</p>' if note else ''}
+      <a class="btn {'btn-cream' if featured else 'btn-blue'}" href="contact.html">{cta}</a>
+    </article>'''
+
+Y='<td class="y" aria-label="Inclus">●</td>'; N='<td class="n" aria-label="Non inclus">–</td>'
+def row(label, a, b, c): return f'<tr><th scope="row">{label}</th>{a}{b}{c}</tr>'
+
+TARIFS = phero("station", "Tarifs",
+  "Un tarif construit sur votre exploitation",
+  "Le prix dépend de la surface suivie, du nombre de secteurs et des modules activés. Commencez par un diagnostic de vos parcelles, puis choisissez le suivi qui vous convient.") + f'''
+<main>
+<section class="sec">
+  <div class="sec-head">
+    <p class="eyebrow a2">Nos offres</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Trois façons de travailler avec Firmaty</h2>
+    <p class="lede a2" style="transition-delay:.15s">Aucun capteur à installer, aucun matériel à acheter. Vous payez un diagnostic, pas un accès à de la donnée brute.</p>
+  </div>
+  <div class="offers">
+    {offer("Diagnostic", "Pour découvrir ce que vos parcelles disent déjà", "Sur devis", "analyse ponctuelle",
+      ["Délimitation de vos secteurs à distance","Historique satellite rétroactif sur les mois écoulés","Croisement avec le climat de la période","Intégration de vos analyses existantes","Restitution commentée avec un agronome"],
+      "Demander un diagnostic", note="Déduit de votre abonnement si vous continuez.")}
+    {offer("Exploitation", "Pour les domaines, stations et exportateurs", "Sur devis", "par hectare et par an",
+      ["Les quatre écrans : Climat, Satellite, Laboratoire, Pilotage","Synthèse du jour et actions secteur par secteur","Recommandations d'irrigation et de fertilisation","Alertes maladies et ravageurs par stade","Accompagnement à la mise en route"],
+      "Demander une démo", featured=True)}
+    {offer("Coopérative", "Pour les coopératives, agrégateurs et assureurs", "Sur devis", "selon le nombre d'adhérents",
+      ["Tout le suivi Exploitation","Un compte pour tous les adhérents","Priorisation des visites du technicien","Historique daté et traçable par secteur","Interlocuteur dédié"],
+      "Parler à notre équipe")}
+  </div>
+</section>
+
+<section class="wrap20 sec-gap">
+  <div class="box">
+    <p class="eyebrow a2">Ce qui fait le prix</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Trois critères, rien de caché</h2>
+    <div class="grid3">
+      <article class="card a2">{dots(1,"Critère 1 sur 3")}<div class="txt"><h3>La surface suivie</h3><p>Le nombre d'hectares que la plateforme analyse. C'est la base du tarif, et il baisse par hectare quand la surface augmente.</p></div></article>
+      <article class="card a2" style="transition-delay:.1s">{dots(2,"Critère 2 sur 3")}<div class="txt"><h3>Le nombre de secteurs</h3><p>Chaque secteur est suivi et qualifié séparément. Plus le découpage est fin, plus le diagnostic est précis.</p></div></article>
+      <article class="card a2" style="transition-delay:.2s">{dots(3,"Critère 3 sur 3")}<div class="txt"><h3>Les modules activés</h3><p>Climat, satellite, laboratoire, pilotage : vous activez ce dont vous avez besoin et vous complétez ensuite.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head">
+    <p class="eyebrow a2">Comparer</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Ce que comprend chaque offre</h2>
+  </div>
+  <div class="cmp-wrap a2">
+    <table class="cmp-table">
+      <thead><tr><th scope="col"><span class="vh">Fonction</span></th><th scope="col">Diagnostic</th><th scope="col" class="feat">Exploitation</th><th scope="col">Coopérative</th></tr></thead>
+      <tbody>
+        {row("Historique satellite rétroactif",Y,Y,Y)}
+        {row("Croisement climat et stade de la culture",Y,Y,Y)}
+        {row("Intégration des analyses de laboratoire",Y,Y,Y)}
+        {row("Suivi continu, image après image",N,Y,Y)}
+        {row("Synthèse du jour et actions par secteur",N,Y,Y)}
+        {row("Recommandation d'irrigation",N,Y,Y)}
+        {row("Pression maladies et ravageurs",N,Y,Y)}
+        {row("Plusieurs exploitations sur un compte",N,N,Y)}
+        {row("Priorisation des visites du technicien",N,N,Y)}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec faqs">
+  <div class="faq-group">
+    <div class="faq-side"><p class="eyebrow a2">Tarifs</p><h2 class="h3 a2">Questions fréquentes</h2></div>
+    <div class="qa">
+      {qa("Pourquoi pas un prix affiché à l'hectare ?","Parce que le diagnostic dépend de votre découpage en secteurs et des modules utiles à vos cultures. Nous construisons le tarif avec vous après la démonstration, une fois le périmètre clair. Nous ne vendons pas un accès à de la donnée satellite brute, mais une lecture agronomique.",True)}
+      {qa("Faut-il acheter du matériel ?","Non. L'imagerie et le climat proviennent de sources externes, et les analyses de laboratoire sont celles que vous faites déjà. Les sondes peuvent être intégrées si vous en avez, sans être obligatoires.")}
+      {qa("Peut-on commencer petit ?","Oui. Le diagnostic porte sur les secteurs de votre choix, et chaque module s'active secteur par secteur. Vous élargissez quand les résultats vous ont convaincu.")}
+      {qa("Que deviennent nos données si nous arrêtons ?","Vos analyses et vos contours de parcelles restent votre propriété. Les modalités de restitution sont précisées dans le contrat.")}
+    </div>
+  </div>
+</section>
+</main>
+''' + cta(h2="Recevez une proposition pour vos parcelles", p="Indiquez votre surface, vos cultures et vos secteurs. Nous revenons vers vous avec un diagnostic et un tarif adapté.", btn="Demander un devis")

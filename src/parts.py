@@ -5,9 +5,23 @@ PAGES = [
     ("methode.html", "La méthode"),
     ("plateforme.html", "La plateforme"),
     ("pour-qui.html", "Pour qui"),
-    ("galerie.html", "Galerie"),
+    ("tarifs.html", "Tarifs"),
     ("questions.html", "Questions"),
 ]
+
+
+def leaf(blue="#274B9C", green="#5CBB4C", vein="#FFFBF3", size=None):
+    """Firmaty mark: a two-tone leaf whose veins converge on the midrib (three sources, one decision)."""
+    wh = f' width="{size}" height="{size}"' if size else ''
+    return (f'<svg class="leaf" viewBox="0 0 48 48"{wh} aria-hidden="true">'
+            f'<path d="M9 39C9 19 22 6 42 6L9 39Z" fill="{blue}"/>'
+            f'<path d="M9 39L42 6C42 26 29 39 9 39Z" fill="{green}"/>'
+            f'<path d="M9 39L36 12M17 31C15.5 26.5 15.5 22 17 18M24 24C23 20 23.5 16 26 12.5M17 31C21.5 32.5 26 32.5 30 30.5M24 24C28 25 32 24.5 35.5 22" '
+            f'fill="none" stroke="{vein}" stroke-width="1.8" stroke-linecap="round"/>'
+            f'<path d="M9 39L4.5 43.5" stroke="{blue}" stroke-width="2.6" stroke-linecap="round"/></svg>')
+
+def logo_html(alt):
+    return f'<span class="logo-mark">{leaf()}</span><b>Firmaty</b><span class="vh">{alt}</span>'
 
 CUR = ' aria-current="page"'
 
@@ -17,7 +31,7 @@ def header(current):
     drop = ''.join(f'<a href="{h}"{CUR if h == current else ""}>{t}</a>' for h, t in PAGES)
     return f'''<div class="hdr" id="hdr">
   <nav class="bar" aria-label="Navigation principale">
-    <a class="logo" href="index.html"><img src="img/logo-firmaty.png" alt="Firmaty, accueil" width="471" height="150"></a>
+    <a class="logo" href="index.html" aria-label="Firmaty, accueil">{logo_html("")}</a>
     <ul class="links">
       {links}
       <li class="cta"><a class="btn btn-blue" href="contact.html">Demander une démo</a></li>
@@ -29,13 +43,13 @@ def header(current):
 '''
 
 def footer():
-    nav = '<li><a href="index.html">Accueil</a></li>' + ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in PAGES) + '<li><a href="contact.html">Démonstration</a></li>'
+    nav = '<li><a href="index.html">Accueil</a></li>' + ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in PAGES) + '<li><a href="galerie.html">Galerie</a></li><li><a href="contact.html">Démonstration</a></li>'
     return f'''<footer>
   <div class="foot-wrap">
     <div class="foot">
       <div class="grid">
         <div>
-          <a class="logo" href="index.html"><img src="img/logo-firmaty.png" alt="Firmaty" width="471" height="150" loading="lazy"></a>
+          <a class="logo" href="index.html" aria-label="Firmaty">{logo_html("")}</a>
           <div class="ft-text">
             <p>Firmaty · Agriculture de précision<br>Le diagnostic agronomique qui croise toutes vos sources de données<br>Maroc</p>
             <p>firmaty.com</p>
