@@ -10,7 +10,7 @@ os.makedirs(OUT, exist_ok=True)
 css = open(os.path.join(SRC, 'base.css')).read() + open(os.path.join(SRC, 'extra.css')).read()
 open(os.path.join(OUT, 'site.css'), 'w').write(css)
 shutil.copy(os.path.join(SRC, 'site.js'), os.path.join(OUT, 'site.js'))
-shutil.copy(os.path.join(SRC, 'farm3d.js'), os.path.join(OUT, 'farm3d.js'))
+shutil.copy(os.path.join(SRC, 'farmsat.js'), os.path.join(OUT, 'farmsat.js'))
 os.makedirs(os.path.join(OUT, 'vendor'), exist_ok=True)
 shutil.copy(os.path.join(SRC, 'vendor', 'three.min.js'), os.path.join(OUT, 'vendor', 'three.min.js'))
 if os.path.exists(os.path.join(OUT, 'img')):
