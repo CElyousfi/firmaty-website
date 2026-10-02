@@ -117,4 +117,20 @@
       cnt.textContent=v?(n+' réponse'+(n>1?'s':'')):'';empty.hidden=!(v&&n===0);
     });
   }
+
+  /* count-up numbers */
+  var nums=document.querySelectorAll('[data-count]');
+  function fmt(n,el){var t=Math.round(n).toString();if(el.dataset.sep)t=t.replace(/\B(?=(\d{3})+(?!\d))/g,' ');return t+(el.dataset.suffix||'')}
+  if(nums.length&&'IntersectionObserver' in window&&!reduce){
+    var no=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;no.unobserve(e.target);var el=e.target,to=+el.dataset.count,t0=null;
+      function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),v=1-Math.pow(1-k,3);el.textContent=fmt(to*v,el);if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)})},{threshold:.6});
+    nums.forEach(function(el){no.observe(el)});
+  }
+  /* ressources filter */
+  var rch=[].slice.call(document.querySelectorAll('.chip-btn[data-r]'));
+  rch.forEach(function(c){c.addEventListener('click',function(){var f=c.dataset.r;rch.forEach(function(x){var on=x===c;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});
+    document.querySelectorAll('.res').forEach(function(r){r.classList.toggle('out',!(f==='all'||r.dataset.cat===f))})})});
+  /* pour qui: open the tab named in the address (#cooperatives, #domaines, #agregateurs) */
+  var h=location.hash.slice(1),tab=h&&document.getElementById('t-'+h);
+  if(tab){tab.click();setTimeout(function(){document.querySelector('.aud').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})},300)}
 })();

@@ -2,11 +2,11 @@
 LOGO = '<svg viewBox="0 0 84 46" fill="none" aria-hidden="true"><g stroke="{c}" stroke-width="3" stroke-linecap="round"><rect x="5" y="16" width="22" height="22" rx="3" transform="rotate(-30 16 27)"/><rect x="30" y="10" width="22" height="22" rx="3" transform="rotate(-30 41 21)"/><path d="M57 34c8-1 15-5 21-12"/></g><g fill="{c}"><circle cx="16" cy="27" r="3.5"/><circle cx="41" cy="21" r="3.5"/><circle cx="78" cy="9" r="4.5"/></g></svg>'
 
 PAGES = [
+    ("mission.html", "Notre mission"),
+    ("services.html", "Services"),
     ("methode.html", "La méthode"),
-    ("plateforme.html", "La plateforme"),
     ("pour-qui.html", "Pour qui"),
     ("tarifs.html", "Tarifs"),
-    ("questions.html", "Questions"),
 ]
 
 
@@ -31,7 +31,7 @@ def header(current):
     drop = ''.join(f'<a href="{h}"{CUR if h == current else ""}>{t}</a>' for h, t in PAGES)
     return f'''<div class="hdr" id="hdr">
   <nav class="bar" aria-label="Navigation principale">
-    <a class="logo" href="index.html" aria-label="Firmaty, accueil">{logo_html("")}</a>
+    <a class="logo" href="index.html"><img src="img/logo-firmaty.png" alt="Firmaty, accueil" width="529" height="140"></a>
     <ul class="links">
       {links}
       <li class="cta"><a class="btn btn-blue" href="contact.html">Demander une démo</a></li>
@@ -43,13 +43,13 @@ def header(current):
 '''
 
 def footer():
-    nav = '<li><a href="index.html">Accueil</a></li>' + ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in PAGES) + '<li><a href="galerie.html">Galerie</a></li><li><a href="contact.html">Démonstration</a></li>'
+    nav = '<li><a href="index.html">Accueil</a></li>' + ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in PAGES) + '<li><a href="galerie.html">Galerie</a></li><li><a href="questions.html">Questions</a></li><li><a href="contact.html">Démonstration</a></li>'
     return f'''<footer>
   <div class="foot-wrap">
     <div class="foot">
       <div class="grid">
         <div>
-          <a class="logo" href="index.html" aria-label="Firmaty">{logo_html("")}</a>
+          <a class="logo" href="index.html"><img src="img/logo-firmaty.png" alt="Firmaty" width="529" height="140" loading="lazy"></a>
           <div class="ft-text">
             <p>Firmaty · Agriculture de précision<br>Le diagnostic agronomique qui croise toutes vos sources de données<br>Maroc</p>
             <p>firmaty.com</p>
@@ -63,7 +63,7 @@ def footer():
         </div>
         <div><h4>Navigation</h4><ul>{nav}</ul></div>
         <div class="ct"><h4>Contact</h4><p>Firmaty<br>Agriculture de précision<br>Maroc</p><p>Démonstration sur demande<br>web : firmaty.com</p></div>
-        <div class="follow"><h4>Ressources</h4><ul><li><a href="methode.html#lexique">Lexique</a></li><li><a href="questions.html">Questions fréquentes</a></li><li><a href="confidentialite.html">Vos données</a></li><li><a href="contact.html">Demander une démo</a></li></ul></div>
+        <div class="follow"><h4>Ressources</h4><ul><li><a href="ressources.html">Ressources</a></li><li><a href="methode.html#lexique">Lexique</a></li><li><a href="questions.html">Questions fréquentes</a></li><li><a href="confidentialite.html">Vos données</a></li><li><a href="contact.html">Demander une démo</a></li></ul></div>
       </div>
     </div>
   </div>

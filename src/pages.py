@@ -7,6 +7,8 @@ ICON = {
  "lab": '<path d="M18 5h12M20.5 5v13L9.5 37.5A3.2 3.2 0 0 0 12.3 42h23.4a3.2 3.2 0 0 0 2.8-4.5L27.5 18V5"/><path d="M14 29h20"/><path d="M19 38c0-5 3.5-7.5 8-7.5 0 4.5-3.5 7.5-8 7.5zM19 38l4.5-4"/>',
  "coop": '<circle cx="24" cy="14" r="5"/><circle cx="10" cy="19" r="4"/><circle cx="38" cy="19" r="4"/><path d="M14 40c0-6 4.5-10 10-10s10 4 10 10M3 37c0-5 3-8 7-8M45 37c0-5-3-8-7-8"/>',
  "truck": '<rect x="3" y="14" width="25" height="18" rx="2"/><path d="M28 20h8l6 7v5H28"/><circle cx="12" cy="36" r="4"/><circle cx="35" cy="36" r="4"/>',
+ "flow": '<circle cx="10" cy="12" r="5"/><circle cx="10" cy="36" r="5"/><circle cx="38" cy="24" r="6"/><path d="M15 13c9 1 13 5 17 9M15 35c9-1 13-5 17-9"/>',
+ "ask": '<path d="M8 10a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H20l-8 8v-8h0a4 4 0 0 1-4-4z"/><path d="M20 15a4 4 0 1 1 5.5 3.7c-1 .5-1.5 1.3-1.5 2.3M24 25.5v.5"/>',
  "doc": '<path d="M12 4h18l8 8v32H12z"/><path d="M30 4v8h8M18 22h14M18 29h14M18 36h8"/>',
 }
 def ico(k, size=56):
@@ -29,7 +31,7 @@ METHODE = phero("vue-aerienne", "La méthode",
     <h2 class="h2 sl" style="transition-delay:.1s">Nous ne lisons pas une source de données. Nous les croisons toutes.</h2>
     <p class="sl" style="transition-delay:.2s">La plupart des outils de suivi satellite surveillent un indice et déclenchent une alerte dès qu'il sort de sa moyenne. Sans connaître le stade de la culture ni les conditions de la période, ils ne peuvent pas faire la différence entre un stress réel et une évolution normale de la plante.</p>
     <p class="sl" style="transition-delay:.2s">Firmaty réunit sur chaque secteur trois flux qui ne se parlent jamais d'habitude : l'imagerie satellite, les conditions climatiques rapportées au stade phénologique, et vos analyses de laboratoire. Notre moteur d'analyse recoupe les trois, écarte les fausses alertes, et vous dit quoi corriger et où.</p>
-    <a class="btn btn-blue sl" style="transition-delay:.2s;margin-top:30px" href="plateforme.html">Voir la plateforme</a>
+    <a class="btn btn-blue sl" style="transition-delay:.2s;margin-top:30px" href="services.html">Voir nos services</a>
   </div>
   <div class="media fi"><img src="img/prelevement-sol.jpg" alt="Agronome prélevant un échantillon de sol dans un verger d'agrumes" loading="lazy"></div>
 </section>
@@ -104,26 +106,26 @@ METHODE = phero("vue-aerienne", "La méthode",
   <div class="band big a3">
     <div class="band-txt">
       <p class="eyebrow sl">L'avance</p>
-      <p class="bignum sl" style="transition-delay:.1s">7 à 10 <small>jours</small></p>
+      <p class="bignum sl" style="transition-delay:.1s"><small class="pre-n">jusqu'à</small>15 <small>jours</small></p>
     </div>
     <div class="band-side sl" style="transition-delay:.2s">
       <h3>C'est l'avance que vous prenez sur un stress hydrique.</h3>
       <p>L'indice de teneur en eau détecte un déficit avant que la plante ne l'exprime visuellement. Quand vos équipes le voient au champ, il est déjà installé. Sur une culture d'export, cette semaine et demie se lit directement dans le calibre du fruit et dans le tonnage que vous pourrez engager.</p>
     </div>
     <figure class="lead-chart" data-play>
-      <svg viewBox="0 0 1000 250" role="img" aria-label="Illustration : l'indice de teneur en eau franchit le seuil de stress environ neuf jours avant que le symptôme soit visible au champ">
-        <rect class="lc-win" x="232" y="24" width="430" height="176"/>
+      <svg viewBox="0 0 1000 250" role="img" aria-label="Illustration : l'indice de teneur en eau franchit le seuil de stress environ quinze jours avant que le symptôme soit visible au champ">
+        <rect class="lc-win" x="181" y="24" width="705" height="176"/>
         <line class="lc-grid" x1="40" y1="200" x2="980" y2="200"/>
         <line class="lc-thr" x1="40" y1="112" x2="980" y2="112"/>
         <text class="lc-t" x="976" y="104" text-anchor="end">Seuil de stress</text>
-        <path class="lc-curve" d="M40 52 C 130 54, 190 80, 232 112 S 420 170, 560 182 S 820 192, 980 194"/>
-        <circle class="lc-dot d1" cx="232" cy="112" r="7"/>
-        <line class="lc-mark" x1="662" y1="20" x2="662" y2="200"/>
-        <circle class="lc-dot d2" cx="662" cy="186" r="7"/>
-        <text class="lc-t b" x="232" y="12" text-anchor="middle">Détection Firmaty</text>
-        <text class="lc-t b" x="662" y="12" text-anchor="middle">Symptôme visible au champ</text>
-        <text class="lc-big" x="447" y="92" text-anchor="middle">7 à 10 jours d'avance</text>
-        <g class="lc-ax"><text x="40" y="228">J0</text><text x="232" y="228" text-anchor="middle">J+4</text><text x="662" y="228" text-anchor="middle">J+13</text><text x="980" y="228" text-anchor="end">J+20</text></g>
+        <path class="lc-curve" d="M40 58 C 100 60, 150 84, 181 112 S 400 166, 640 178 S 880 188, 980 191"/>
+        <circle class="lc-dot d1" cx="181" cy="112" r="7"/>
+        <line class="lc-mark" x1="886" y1="24" x2="886" y2="200"/>
+        <circle class="lc-dot d2" cx="886" cy="187" r="7"/>
+        <text class="lc-t b" x="181" y="12" text-anchor="middle">Détection Firmaty</text>
+        <text class="lc-t b" x="980" y="12" text-anchor="end">Symptôme visible au champ</text>
+        <text class="lc-big" x="533" y="92" text-anchor="middle">Jusqu'à 15 jours d'avance</text>
+        <g class="lc-ax"><text x="40" y="228">J0</text><text x="181" y="228" text-anchor="middle">J+3</text><text x="886" y="228" text-anchor="middle">J+18</text><text x="980" y="228" text-anchor="end">J+20</text></g>
         <text class="lc-t" x="40" y="40">Indice de teneur en eau</text>
       </svg>
       <figcaption>Illustration du principe, pas une mesure d'exploitation.</figcaption>
@@ -274,7 +276,7 @@ AUD = [
    "Vos volumes se jouent des mois avant la récolte","Une anomalie détectée au printemps est corrigeable. Constatée en réception, c'est une perte.",
    "La mauvaise nouvelle arrive au quai de réception, contrat déjà signé.",
    "Les écarts de vigueur, d'eau ou de nutrition sont repérés pendant la saison, quand ils se corrigent encore.",
-   ["Suivi du calibre et du tonnage à engager","Avance de 7 à 10 jours sur un stress hydrique","Corrections ciblées secteur par secteur"]),
+   ["Suivi du calibre et du tonnage à engager","Jusqu'à 15 jours d'avance sur un stress hydrique","Corrections ciblées secteur par secteur"]),
   ("agregateurs","Agrégateurs, bureaux d'études, assurance","vue-aerienne","Vue aérienne de parcelles de vergers","center",
    "Des preuves, pas du déclaratif","Historique daté, mesures horodatées, analyses rattachées au secteur. De quoi objectiver un conseil, un financement ou un sinistre.",
    "La preuve repose sur du déclaratif et des visites ponctuelles.",
@@ -293,7 +295,8 @@ def audience_tabs():
         <div class="cmp"><div class="today"><b>Aujourd'hui</b>{today}</div><div class="with"><b>Avec Firmaty</b>{withf}</div></div>
         {bullets(gets)}
       </div>'''
-    return f'''<section class="aud a2">
+    anchors = ''.join(f'<span id="{k}" class="aud-anchor"></span>' for k,*_ in AUD)
+    return f'''<section class="aud a2">{anchors}
   <div class="aud-tabs" role="tablist" aria-label="Profils">{tabs}</div>
   <div class="aud-body">
     <div class="aud-media">{imgs}</div>
@@ -616,3 +619,189 @@ TARIFS = phero("station", "Tarifs",
 </section>
 </main>
 ''' + cta(h2="Recevez une proposition pour vos parcelles", p="Indiquez votre surface, vos cultures et vos secteurs. Nous revenons vers vous avec un diagnostic et un tarif adapté.", btn="Demander un devis")
+
+
+# ---------------------------------------------------------------- SERVICES
+def svc_row(n, key, eyebrow, title, text, gets, media, rev=False, extra=""):
+    return f'''<section class="srv{' rev' if rev else ''}" id="{key}">
+  <div class="srv-txt">
+    <p class="srv-n sl"><span>0{n}</span>{eyebrow}</p>
+    <h2 class="h2 sl" style="transition-delay:.1s">{title}</h2>
+    <p class="sl" style="transition-delay:.2s">{text}</p>
+    {extra}
+    <div class="sl" style="transition-delay:.25s">{bullets(gets)}</div>
+  </div>
+  <div class="srv-media fi">{media}</div>
+</section>
+'''
+
+def photo(src, alt, pos="center"):
+    return f'<img src="img/{src}.jpg" alt="{alt}" loading="lazy" style="object-position:{pos}">'
+
+ALERTS = '''<div class="feed" data-play>
+  <div class="feed-head"><b>Alertes automatiques</b><span class="live"><i></i>En temps réel</span></div>
+  <ol class="feed-list">
+    <li class="al crit"><span class="al-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.2 6 10.5A6 6 0 0 1 6 13.5C6 10.2 9 7 12 3z"/></svg></span><div><b>Stress hydrique détecté</b><p>Secteur Nord-Est : NDWI en baisse de 18 % en 5 jours</p><time>Il y a 2 heures</time></div></li>
+    <li class="al warn"><span class="al-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-13 14-14 0 8-5 14-14 14z"/><path d="M5 19l8-8"/></svg></span><div><b>Carence azotée probable</b><p>Secteur Sud : NDRE en dessous du seuil critique</p><time>Il y a 6 heures</time></div></li>
+    <li class="al inf"><span class="al-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1" transform="rotate(45 12 12)"/><path d="M7 7L4 4M17 17l3 3M4 7l3-3M20 17l-3 3"/></svg></span><div><b>Nouvelle image disponible</b><p>Sentinel-2 : couverture nuageuse 5 %, qualité optimale</p><time>Il y a 1 jour</time></div></li>
+  </ol>
+  <p class="feed-note">Exemples d'alertes, données de démonstration.</p>
+</div>'''
+
+INDICES = '''<dl class="indices sl" style="transition-delay:.2s">
+  <div><dt>NDVI</dt><dd>Vigueur de la végétation</dd></div>
+  <div><dt>NDWI</dt><dd>Teneur en eau du couvert</dd></div>
+  <div><dt>NDRE</dt><dd>Statut azoté des feuilles</dd></div>
+</dl>'''
+
+SERVICES = phero("situ-satellite", "Services",
+  "Des services agronomiques, pas un simple logiciel",
+  "Nous lisons vos parcelles, nous vous alertons et nous vous disons quoi faire. La technologie travaille en coulisses ; vous recevez des décisions.", "60% center") + f'''
+<main>
+<section class="sec srv-index-wrap">
+  <div class="sec-head">
+    <p class="eyebrow a2">Ce que nous faisons pour vous</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Cinq services, de la parcelle à la décision</h2>
+    <p class="lede a2" style="transition-delay:.15s">Ils s'enchaînent naturellement : on commence par un diagnostic, puis on surveille, on pilote l'eau et la nutrition, et on vous accompagne dans la durée.</p>
+  </div>
+  <ol class="srv-index a2">
+    <li><a href="#diagnostic"><span>01</span>Diagnostic</a></li>
+    <li><a href="#surveillance"><span>02</span>Surveillance et alertes</a></li>
+    <li><a href="#irrigation"><span>03</span>Irrigation</a></li>
+    <li><a href="#nutrition"><span>04</span>Nutrition</a></li>
+    <li><a href="#accompagnement"><span>05</span>Accompagnement</a></li>
+  </ol>
+</section>
+''' + svc_row(1, "diagnostic", "Diagnostic de vos parcelles", "Voyons ce que vos parcelles disent déjà",
+  "Vous nous indiquez les contours de vos parcelles et les cultures en place. Nous remontons l'historique satellite sur les mois écoulés, le croisons avec le climat de la période et avec vos analyses existantes, puis nous passons ensemble sur les résultats.",
+  ["Aucun capteur, aucun matériel à installer","Historique rétroactif : des résultats sans attendre une saison","Ce qui relève du normal, ce qui mérite votre attention","Restitution commentée avec un agronome"],
+  photo("prelevement-sol","Agronome prélevant un échantillon de sol entre deux rangs d'agrumes","35% center")) + \
+svc_row(2, "surveillance", "Surveillance continue et alertes automatiques", "Ne ratez plus jamais un moment critique de vos cultures",
+  "Surveillance satellite en continu avec alertes automatiques par intelligence artificielle. Chaque nouvelle image Sentinel-2 est analysée : vous détectez les problèmes jusqu'à 15 jours avant qu'ils ne deviennent visibles et recevez des recommandations actionnables.",
+  ["Stress hydrique, carence azotée, pression sanitaire","Alertes qualifiées : les fausses alertes sont écartées","Une synthèse chaque matin, secteur par secteur","Couverture nuageuse filtrée automatiquement"],
+  ALERTS, rev=True, extra=INDICES) + \
+svc_row(3, "irrigation", "Pilotage de l'irrigation", "La bonne quantité d'eau, au bon moment",
+  "Conditions en temps réel, prévisions à 24 heures et à 5 jours, évapotranspiration et déficit de pression de vapeur : la recommandation d'apport est calculée pour chaque secteur, selon la culture et son stade.",
+  ["Recommandation d'apport sur les prochaines 24 heures","Créneaux conseillés pour limiter l'évaporation","Historique des apports et des conditions","Pression maladies et ravageurs selon le stade"],
+  photo("situ-climat","L'écran Climat de Firmaty sur un téléphone, au pied d'un jeune agrume","34% center")) + \
+svc_row(4, "nutrition", "Nutrition et analyses de laboratoire", "Corriger ce qui compte, avant la fin du stade",
+  "Vos rapports de sol, foliaires et d'eau sont confrontés aux cibles de la culture et du stade. Nous détectons les antagonismes nutritionnels, ces blocages où un élément présent devient inaccessible à la plante, et vous indiquons la correction à apporter.",
+  ["Score de fertilité par secteur","Écarts aux cibles du stade, élément par élément","Équilibre cationique et antagonismes","Correction par fertigation et calendrier"],
+  photo("situ-labo","L'écran Laboratoire de Firmaty sur un ordinateur, au milieu d'échantillons de sol et de feuilles"), rev=True) + \
+svc_row(5, "accompagnement", "Accompagnement et pilotage", "Un agronome à vos côtés, des données derrière chaque décision",
+  "La vue d'ensemble de l'exploitation ou de la coopérative : secteurs configurés, actions de la semaine, historique daté. Nous restons à vos côtés pour lire les résultats et prioriser les interventions.",
+  ["Vue d'ensemble de tous les secteurs ou de tous les adhérents","Priorisation des visites du technicien","Historique daté, utile pour un conseil, un financement ou un sinistre","Interlocuteur dédié"],
+  photo("situ-pilotage","Le tableau de bord Pilotage de Firmaty au bureau d'une station de conditionnement")) + f'''
+<section class="sec">
+  <div class="sec-head">
+    <p class="eyebrow a2">Les outils derrière nos services</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Ce que vous voyez sur votre écran</h2>
+  </div>
+</section>
+''' + scrolly() + f'''
+<p class="demo-note">Interfaces reconstituées avec des données de démonstration. Aucune donnée d'exploitation réelle n'est affichée.</p>
+</main>
+''' + cta(h2="Commencez par un diagnostic de vos parcelles", p="Nous analysons vos secteurs sur les mois écoulés, sans rien installer. Découvrez ensuite les offres adaptées à votre exploitation.", btn="Voir les tarifs", href="tarifs.html")
+
+# ---------------------------------------------------------------- MISSION
+MISSION = phero("hero", "Notre mission",
+  "Démocratiser l'agriculture de précision",
+  "Firmaty est née d'une conviction : chaque agriculteur devrait pouvoir accéder aux technologies d'observation de la Terre et d'intelligence artificielle pour optimiser ses cultures et préserver les ressources.", "70% center") + f'''
+<main>
+<section class="manifesto">
+  <img class="mf-mark fi" src="img/logo-feuille.png" alt="" aria-hidden="true">
+  <p class="eyebrow a2">Notre conviction</p>
+  <p class="manifesto-q a2" style="transition-delay:.1s">L'agriculture de précision ne doit pas être <em>réservée aux grandes structures</em>. Ce que les satellites voient de vos parcelles, vous devez pouvoir le comprendre et l'utiliser, quelle que soit la taille de votre exploitation.</p>
+</section>
+
+<section class="mission page" id="notre-mission">
+  <div class="mission-txt">
+    <p class="eyebrow sl">Notre mission</p>
+    <h2 class="h2 sl" style="transition-delay:.1s">Rendre l'agriculture de précision accessible à tous</h2>
+    <p class="sl" style="transition-delay:.2s">Fondée en 2026, Firmaty s'est donnée pour mission de <b>rendre l'agriculture de précision accessible à tous</b>, des petites exploitations familiales aux grandes structures agricoles.</p>
+    <p class="sl" style="transition-delay:.2s">Nous croyons que l'avenir de l'agriculture passe par une utilisation intelligente des données satellitaires et de l'intelligence artificielle. En combinant <b>l'imagerie Sentinel-2 gratuite</b> avec des algorithmes d'analyse avancés, nous permettons à chaque agriculteur de :</p>
+    <ul class="mission-list sl" style="transition-delay:.25s">
+      <li><span>01</span><div><b>Détecter 15 jours avant</b>Les problèmes, avant qu'ils ne deviennent visibles.</div></li>
+      <li><span>02</span><div><b>Réduire les coûts</b>En optimisant l'irrigation et la fertilisation.</div></li>
+      <li><span>03</span><div><b>Produire en préservant</b>Augmenter les rendements tout en préservant l'environnement.</div></li>
+      <li><span>04</span><div><b>Décider sur des faits</b>Des décisions basées sur des données objectives.</div></li>
+    </ul>
+  </div>
+  <div class="media fi"><img src="img/avocat.jpg" alt="Main d'agronome examinant une feuille d'avocatier" loading="lazy" style="object-position:72% center"></div>
+</section>
+
+<section class="wrap20 sec-gap">
+  <div class="box road-box">
+    <p class="eyebrow a2">Notre ambition</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">De 20 exploitations pilotes à plus de 1 000 fermes</h2>
+    <p class="lede a2" style="transition-delay:.15s">Actuellement en phase pilote avec 20 exploitations au Maroc sur 200 hectares, Firmaty vise à accompagner plus de 1 000 fermes dans les deux prochaines années.</p>
+    <ol class="road" data-play>
+      <li class="r-done"><span class="road-dot"></span><p class="road-y">2026</p><h3>Création de Firmaty</h3><p>La conviction devient une entreprise : rendre l'observation de la Terre utile à chaque exploitation.</p></li>
+      <li class="r-now"><span class="road-dot"></span><p class="road-y">Aujourd'hui</p><h3>Phase pilote au Maroc</h3><p><b>20 exploitations</b> et <b>200 hectares</b> suivis, pour éprouver le diagnostic sur le terrain, culture par culture.</p></li>
+      <li class="r-next"><span class="road-dot"></span><p class="road-y">D'ici deux ans</p><h3>Plus de 1 000 fermes</h3><p>Étendre l'accompagnement aux exploitations familiales comme aux grandes structures, et démocratiser l'accès à l'agriculture de précision au Maroc.</p></li>
+    </ol>
+    <div class="road-stats">
+      <div class="a2"><b data-count="20">20</b><span>exploitations pilotes</span></div>
+      <div class="a2" style="transition-delay:.1s"><b data-count="200" data-suffix=" ha">200 ha</b><span>suivis aujourd'hui</span></div>
+      <div class="a2" style="transition-delay:.2s"><b data-count="1000" data-sep="1" data-suffix="+">1 000+</b><span>fermes visées d'ici deux ans</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head">
+    <p class="eyebrow a2">Nos engagements</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Ce en quoi nous croyons</h2>
+  </div>
+  <div class="grid4 values">
+    <article class="card line a2"><span class="v-n">01</span><div class="txt"><h3>Accessible</h3><p>Des petites exploitations familiales aux grandes structures : sans capteur à installer, avec l'imagerie Sentinel-2 gratuite.</p></div></article>
+    <article class="card line a2" style="transition-delay:.1s"><span class="v-n">02</span><div class="txt"><h3>Objectif</h3><p>Chaque recommandation s'appuie sur des mesures datées : satellite, climat et laboratoire, croisés plutôt que lus séparément.</p></div></article>
+    <article class="card line a2" style="transition-delay:.2s"><span class="v-n">03</span><div class="txt"><h3>Sobre</h3><p>La bonne quantité d'eau et d'engrais, au bon endroit : produire plus en préservant les ressources.</p></div></article>
+    <article class="card line a2" style="transition-delay:.3s"><span class="v-n">04</span><div class="txt"><h3>Transparent</h3><p>Vos analyses et vos parcelles restent votre propriété. Nous en parlons ouvertement avant tout engagement.</p></div></article>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head">
+    <p class="eyebrow a2">Sur quoi nous nous appuyons</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Des données ouvertes, une lecture agronomique</h2>
+  </div>
+  <div class="grid3">
+    <article class="card line a2">{ico("sat")}<div class="txt"><span class="k">COPERNICUS · SENTINEL-2</span><h3>L'œil du satellite</h3><p>L'imagerie multispectrale gratuite du programme européen, en résolution 10 mètres, avec une revisite régulière.</p></div></article>
+    <article class="card line a2" style="transition-delay:.1s">{ico("cli")}<div class="txt"><span class="k">CLIMAT</span><h3>Le contexte de la période</h3><p>Historique, temps réel et prévisions, rapportés au stade de chaque culture.</p></div></article>
+    <article class="card line a2" style="transition-delay:.2s">{ico("lab")}<div class="txt"><span class="k">LABORATOIRE ET IA</span><h3>La mesure et l'analyse</h3><p>Vos analyses de sol, foliaires et d'eau, et des algorithmes qui recoupent les trois sources.</p></div></article>
+  </div>
+  <p class="more-link a2"><a href="ressources.html">Nos ressources sur l'imagerie satellite et l'agriculture de précision →</a></p>
+</section>
+</main>
+''' + cta(h2="Rejoignez la phase pilote", p="Nous accompagnons aujourd'hui 20 exploitations au Maroc. Parlez-nous de la vôtre : nous analysons vos secteurs sur les mois écoulés, sans rien installer.", btn="Rejoindre la phase pilote")
+
+# ---------------------------------------------------------------- RESSOURCES
+def res(cat, label, title, text, date, read, href, icon, external=True):
+    tgt = ' target="_blank" rel="noopener"' if external else ''
+    more = "Lire la ressource" if external else "Lire"
+    return f'''<a class="res a2" data-cat="{cat}" href="{href}"{tgt}>
+      <span class="res-art {cat}">{ico(icon, 40)}</span>
+      <span class="res-cat">{label}</span>
+      <h3>{title}</h3><p>{text}</p>
+      <span class="res-meta"><span>{date}</span><span>{read}</span></span>
+      <span class="res-more">{more}{' ↗' if external else ' →'}</span>
+    </a>'''
+
+RESSOURCES = phero("laboratoire", "Ressources",
+  "Guides, références et formations",
+  "Nos ressources pour maîtriser l'agriculture de précision et tirer parti de l'imagerie satellite sur vos cultures.", "60% center") + f'''
+<main>
+<section class="sec">
+  <div class="chips a2" role="group" aria-label="Filtrer les ressources"><button type="button" class="chip-btn on" data-r="all" aria-pressed="true">Toutes</button><button type="button" class="chip-btn" data-r="guide" aria-pressed="false">Guides pratiques</button><button type="button" class="chip-btn" data-r="tech" aria-pressed="false">Technologie</button><button type="button" class="chip-btn" data-r="form" aria-pressed="false">Formation</button><button type="button" class="chip-btn" data-r="firm" aria-pressed="false">Firmaty</button></div>
+  <div class="res-grid">
+    {res("guide","Guides pratiques","Copernicus Sentinel-2 : Agriculture Applications","Guide officiel de l'ESA sur l'utilisation des données Sentinel-2 pour l'agriculture de précision et le suivi des cultures.","Janvier 2026","8 min de lecture","https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2","sat")}
+    {res("tech","Technologie","NASA Earth Observatory : Remote Sensing Agriculture","Comment la NASA utilise l'imagerie satellite pour surveiller la santé des cultures et optimiser les rendements agricoles mondiaux.","Janvier 2026","10 min de lecture","https://earthobservatory.nasa.gov/","cli")}
+    {res("form","Formation","FAO : Digital Agriculture and Remote Sensing","Rapport de la FAO sur l'agriculture numérique, la télédétection satellite et leur impact sur la sécurité alimentaire mondiale.","Décembre 2025","12 min de lecture","https://www.fao.org/digital-agriculture/en/","lab")}
+    {res("firm","Firmaty","Lexique : les indicateurs de la plateforme","Vigueur, teneur en eau, ET0, VPD, antagonismes nutritionnels : les mots de vos écrans et de vos synthèses, expliqués simplement.","Octobre 2026","5 min de lecture","methode.html#lexique","doc",False)}
+    {res("firm","Firmaty","La méthode : pourquoi croiser trois sources","Un indice qui baisse ne veut rien dire tout seul. Comment le croisement satellite, climat et laboratoire écarte les fausses alertes.","Octobre 2026","6 min de lecture","methode.html","flow",False)}
+    {res("firm","Firmaty","Questions fréquentes","Tarification, matériel, résolution de l'imagerie, cultures couvertes et propriété de vos données.","Octobre 2026","4 min de lecture","questions.html","ask",False)}
+  </div>
+</section>
+</main>
+''' + cta(h2="Une question sur vos parcelles ?", p="Nos ressources ne remplacent pas un diagnostic. Parlez-nous de votre exploitation et nous vous montrons ce que la plateforme en tire.", btn="Demander une démo")

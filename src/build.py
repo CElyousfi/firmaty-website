@@ -17,8 +17,6 @@ shutil.copytree(os.path.join(SRC, '..', 'img'), os.path.join(OUT, 'img'))
 # home: same content as before, links now point to the inner pages
 home = open(os.path.join(SRC, 'home_body.html')).read()
 swaps = [
-    ('href="#plateforme">En savoir plus</a>', 'href="methode.html">En savoir plus</a>'),
-    ('href="#action"><img', 'href="plateforme.html"><img'),
     ('<a class="btn btn-blue" href="#demo">Voir une démonstration</a>', '<a class="btn btn-blue" href="galerie.html">Voir toute la galerie</a>'),
 ]
 for a, b in swaps:
@@ -30,7 +28,9 @@ open(os.path.join(OUT, 'index.html'), 'w').write(page('Firmaty · Agriculture de
 
 for fname, title, body, d in [
     ('methode.html', 'La méthode · Firmaty', pages.METHODE, "Pourquoi croiser satellite, climat et laboratoire, comment le moteur qualifie un écart, et le lexique des indicateurs."),
-    ('plateforme.html', 'La plateforme · Firmaty', pages.PLATEFORME, "Les quatre écrans et les douze services de la plateforme Firmaty."),
+    ('mission.html', 'Notre mission · Firmaty', pages.MISSION, "Fondée en 2026, Firmaty veut rendre l'agriculture de précision accessible à tous : notre mission, nos convictions et notre ambition."),
+    ('services.html', 'Services · Firmaty', pages.SERVICES, "Diagnostic, surveillance et alertes, irrigation, nutrition, accompagnement : les services agronomiques de Firmaty."),
+    ('ressources.html', 'Ressources · Firmaty', pages.RESSOURCES, "Guides, références et formations pour comprendre l'agriculture de précision et l'imagerie satellite."),
     ('pour-qui.html', 'Pour qui · Firmaty', pages.POURQUI, "Coopératives, domaines, stations, exportateurs, agrégateurs et assureurs : ce que Firmaty change pour chacun."),
     ('galerie.html', 'Galerie · Firmaty', pages.GALERIE, "Photos du terrain et écrans de la plateforme Firmaty."),
     ('questions.html', 'Questions · Firmaty', pages.QUESTIONS, "Tarification, matériel, imagerie, cultures et données : les réponses aux questions fréquentes."),
