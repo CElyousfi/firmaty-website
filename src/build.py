@@ -37,7 +37,7 @@ for fname, title, body, d in [
     ('pour-qui.html', 'Pour qui · Firmaty', pages.POURQUI, "Agriculteurs individuels, coopératives, domaines, exportateurs, agrégateurs et assureurs : ce que Firmaty change pour chacun."),
     ('galerie.html', 'Galerie · Firmaty', pages.GALERIE, "Photos du terrain et écrans de la plateforme Firmaty."),
     ('questions.html', 'Questions · Firmaty', pages.QUESTIONS, "Tarification, matériel, imagerie, cultures et données : les réponses aux questions fréquentes."),
-    ('tarifs.html', 'Tarifs · Firmaty', pages.TARIFS, "Les offres Firmaty : diagnostic, exploitation et coopérative, et ce qui détermine le tarif."),
+    ('tarifs.html', 'Tarifs · Firmaty', pages.TARIFS, "Diagnostic gratuit, abonnement à 5 € par hectare et par mois, offre Entreprise sur devis."),
     ('mentions-legales.html', 'Mentions légales · Firmaty', pages.MENTIONS, "Éditeur, hébergeur et propriété intellectuelle du site Firmaty."),
     ('confidentialite.html', 'Politique de confidentialité · Firmaty', pages.CONFID, "Comment Firmaty traite les informations transmises via le site."),
     ('cookies.html', 'Cookies · Firmaty', pages.COOKIES, "Le site Firmaty ne dépose aucun cookie de suivi."),
