@@ -629,3 +629,42 @@ img.mf-leaf{position:absolute;right:-70px;top:-60px;width:300px;height:auto;opac
   .f3-kpi-g b{font-size:26px;line-height:30px}.f3-kpi-g span{font-size:11.5px;line-height:15px}
 }
 @media (prefers-reduced-motion:reduce){.f3-kpi,.f3-bar i,.f3-poster{transition:none}.f3-live-tag i,.f3-src li.on::after{animation:none}}
+
+/* ================= practitioners: "Agriculteurs avant tout" ================= */
+.farmers-note{display:flex;align-items:flex-start;gap:14px;margin:20px 0 4px;padding:16px 18px;border-radius:18px;background:#EAF3EC;border:1px solid rgba(47,158,91,.18);max-width:580px}
+.farmers-note img{flex:none;width:30px;height:auto;margin-top:2px}
+.farmers-note p{font-size:15px;line-height:23px;color:#22314f}
+.farmers-note b{color:#1f7a45;font-family:var(--display)}
+.farmers{max-width:1300px;margin:0 auto;padding:110px 50px 10px}
+.farmers-head{max-width:760px}
+.farmers-head .lede{margin-top:16px;text-align:left}
+.offer.feat .offer-note{background:rgba(255,251,243,.14);color:var(--cream);font-weight:600}
+.farmers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.farmers-grid article{background:var(--sand);border-radius:25px;padding:28px 26px 30px;border-top:4px solid #2F9E5B}
+.farmers-grid span{font-family:var(--display);font-weight:700;font-size:14px;color:#2F9E5B}
+.farmers-grid h3{font-size:22px;line-height:28px;margin:10px 0 8px}
+.farmers-grid p{font-size:15.5px;line-height:25px}
+
+/* ================= pilot-farmer testimonials ================= */
+.tms{max-width:1300px;margin:0 auto;padding:110px 50px 20px}
+.tms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:20px;margin-top:36px}
+.tm{display:grid;grid-template-columns:150px 1fr;gap:24px;margin:0;padding:24px;border-radius:30px;background:var(--sand)}
+.tm-photo{width:150px;height:180px;object-fit:cover;border-radius:20px}
+.tm blockquote{margin:0;font-family:var(--display);font-size:20px;line-height:29px;color:var(--blue)}
+.tm figcaption{margin-top:16px}.tm figcaption b{display:block;font-size:16px}.tm figcaption span{font-size:14px;color:#55607a}
+.tm-facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tm-facts li{font-size:13.5px;font-weight:600;background:#fff;border-radius:30px;padding:6px 12px}
+.tm-facts small{font-weight:500;color:#6b7590;margin-right:5px}
+.tm-wa{display:inline-flex;align-items:center;gap:10px;margin-top:28px}.tm-wa svg{width:20px;height:20px}
+
+/* ================= WhatsApp button ================= */
+.wa-fab{position:fixed;z-index:60;left:22px;bottom:22px;display:flex;align-items:center;gap:9px;padding:12px 18px 12px 14px;border-radius:40px;background:#25D366;color:#fff;font-weight:600;font-size:15px;
+  box-shadow:0 14px 30px -10px rgba(0,0,0,.35);transition:transform .3s}
+.wa-fab:hover{transform:translateY(-2px)}.wa-fab svg{width:24px;height:24px}
+
+@media (max-width:1024px){.farmers-grid{grid-template-columns:1fr}.farmers,.tms{padding:90px 30px 10px}}
+@media (max-width:650px){
+  .farmers,.tms{padding:80px 20px 10px}
+  .tms-grid{grid-template-columns:1fr}.tm{grid-template-columns:1fr;padding:20px}.tm-photo{width:100%;height:240px}
+  .wa-fab{left:14px;bottom:14px;padding:12px}.wa-fab span{display:none}
+}

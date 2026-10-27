@@ -420,7 +420,7 @@ QUESTIONS = phero("prelevement-sol", "Questions",
   <div class="faq-group">
     <div class="faq-side"><p class="eyebrow a2">Démarrer</p><h2 class="h3 a2">Tarifs et mise en route</h2></div>
     <div class="qa">
-      {qa("Comment se situe votre tarification ?","Elle dépend de la surface suivie, du nombre de secteurs et des modules activés. Nous la construisons avec vous après la démonstration, une fois que le périmètre est clair. Nous ne nous comparons pas aux abonnements satellite à quelques euros l'hectare : ceux-ci vendent un accès à la donnée brute, pas un diagnostic.",True)}
+      {qa("Comment se situe votre tarification ?","Le diagnostic de vos parcelles est gratuit. L'abonnement coûte 5 € par hectare et par mois, tous les modules inclus. Les entreprises (coopératives, agrégateurs, exportateurs, assureurs) reçoivent une proposition sur devis.",True)}
       {qa("Faut-il installer des capteurs ou du matériel au champ ?","Non. L'imagerie et les données climatiques proviennent de sources externes. Les analyses de laboratoire sont celles que vous faites déjà, il suffit de nous transmettre les rapports. La plateforme sait aussi intégrer des sondes si vous en avez, mais rien n'est obligatoire pour démarrer.")}
       {qa("Faut-il attendre une saison pour voir des résultats ?","Non. L'historique satellite est rétroactif : nous pouvons analyser vos secteurs sur les mois écoulés sans rien installer et sans attendre. La première restitution porte déjà sur cet historique.")}
       {qa("Comment se passe la mise en route ?","Vous nous indiquez les contours de vos parcelles et les cultures en place. Nous remontons l'historique satellite, le croisons avec les conditions climatiques de la période et avec vos analyses si vous en avez, puis nous passons ensemble sur les résultats. Tout se fait à distance.")}
@@ -554,36 +554,36 @@ Y='<td class="y" aria-label="Inclus">●</td>'; N='<td class="n" aria-label="Non
 def row(label, a, b, c): return f'<tr><th scope="row">{label}</th>{a}{b}{c}</tr>'
 
 TARIFS = phero("station", "Tarifs",
-  "Un tarif construit sur votre exploitation",
-  "Le prix dépend de la surface suivie, du nombre de secteurs et des modules activés. Commencez par un diagnostic de vos parcelles, puis choisissez le suivi qui vous convient.") + f'''
+  "Des tarifs simples et affichés",
+  "Un diagnostic gratuit pour commencer, un abonnement à 5 € par hectare et par mois pour le suivi continu, une offre sur devis pour les entreprises.") + f'''
 <main>
 <section class="sec">
   <div class="sec-head">
     <p class="eyebrow a2">Nos offres</p>
     <h2 class="h2 a2" style="transition-delay:.1s">Trois façons de travailler avec Firmaty</h2>
-    <p class="lede a2" style="transition-delay:.15s">Aucun capteur à installer, aucun matériel à acheter. Vous payez un diagnostic, pas un accès à de la donnée brute.</p>
+    <p class="lede a2" style="transition-delay:.15s">Aucun capteur à installer, aucun matériel à acheter. Vous payez une lecture agronomique de vos parcelles, pas un accès à de la donnée brute.</p>
   </div>
   <div class="offers">
-    {offer("Diagnostic", "Pour découvrir ce que vos parcelles disent déjà", "Sur devis", "analyse ponctuelle",
+    {offer("Diagnostic", "Pour découvrir ce que vos parcelles disent déjà", "Gratuit", "analyse ponctuelle, sans engagement",
       ["Délimitation de vos secteurs à distance","Historique satellite rétroactif sur les mois écoulés","Croisement avec le climat de la période","Intégration de vos analyses existantes","Restitution commentée avec un agronome"],
-      "Demander un diagnostic", note="Déduit de votre abonnement si vous continuez.")}
-    {offer("Exploitation", "Pour les agriculteurs, domaines, stations et exportateurs", "Sur devis", "par hectare et par an",
+      "Demander mon diagnostic gratuit", note="Aucune carte bancaire, aucun engagement.")}
+    {offer("Abonnement", "Pour les agriculteurs, domaines, stations et exportateurs", "5 €", "par hectare et par mois",
       ["Les quatre écrans : Climat, Satellite, Laboratoire, Pilotage","Synthèse du jour et actions secteur par secteur","Recommandations d'irrigation et de fertilisation","Alertes maladies et ravageurs par stade","Accompagnement à la mise en route"],
-      "Demander une démo", featured=True)}
-    {offer("Coopérative", "Pour les coopératives, agrégateurs et assureurs", "Sur devis", "selon le nombre d'adhérents",
-      ["Tout le suivi Exploitation","Un compte pour tous les adhérents","Priorisation des visites du technicien","Historique daté et traçable par secteur","Interlocuteur dédié"],
+      "Démarrer l'abonnement", featured=True, note="Exemple : 20 ha suivis = 100 € par mois.")}
+    {offer("Entreprise", "Pour les coopératives, agrégateurs, exportateurs et assureurs", "Sur devis", "selon la surface et le nombre d'exploitations",
+      ["Tout le suivi de l'Abonnement","Un compte pour tous les adhérents","Priorisation des visites du technicien","Historique daté et traçable par secteur","Interlocuteur dédié"],
       "Parler à notre équipe")}
   </div>
 </section>
 
 <section class="wrap20 sec-gap">
   <div class="box">
-    <p class="eyebrow a2">Ce qui fait le prix</p>
-    <h2 class="h2 a2" style="transition-delay:.1s">Trois critères, rien de caché</h2>
+    <p class="eyebrow a2">Comment ça marche</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Un prix clair, rien de caché</h2>
     <div class="grid3">
-      <article class="card a2">{dots(1,"Critère 1 sur 3")}<div class="txt"><h3>La surface suivie</h3><p>Le nombre d'hectares que la plateforme analyse. C'est la base du tarif, et il baisse par hectare quand la surface augmente.</p></div></article>
-      <article class="card a2" style="transition-delay:.1s">{dots(2,"Critère 2 sur 3")}<div class="txt"><h3>Le nombre de secteurs</h3><p>Chaque secteur est suivi et qualifié séparément. Plus le découpage est fin, plus le diagnostic est précis.</p></div></article>
-      <article class="card a2" style="transition-delay:.2s">{dots(3,"Critère 3 sur 3")}<div class="txt"><h3>Les modules activés</h3><p>Climat, satellite, laboratoire, pilotage : vous activez ce dont vous avez besoin et vous complétez ensuite.</p></div></article>
+      <article class="card a2">{dots(1,"Critère 1 sur 3")}<div class="txt"><h3>Le diagnostic est offert</h3><p>Nous analysons gratuitement les secteurs de votre choix et vous restituons les résultats. Vous décidez ensuite, sans engagement.</p></div></article>
+      <article class="card a2" style="transition-delay:.1s">{dots(2,"Critère 2 sur 3")}<div class="txt"><h3>5 € par hectare et par mois</h3><p>L'abonnement se calcule sur la surface suivie, tous les modules inclus. Vous ajoutez ou retirez des parcelles quand vous voulez.</p></div></article>
+      <article class="card a2" style="transition-delay:.2s">{dots(3,"Critère 3 sur 3")}<div class="txt"><h3>Sur devis pour les entreprises</h3><p>Coopératives, agrégateurs, exportateurs et assureurs : le tarif tient compte de la surface totale et du nombre d'exploitations suivies.</p></div></article>
     </div>
   </div>
 </section>
@@ -595,7 +595,7 @@ TARIFS = phero("station", "Tarifs",
   </div>
   <div class="cmp-wrap a2">
     <table class="cmp-table">
-      <thead><tr><th scope="col"><span class="vh">Fonction</span></th><th scope="col">Diagnostic</th><th scope="col" class="feat">Exploitation</th><th scope="col">Coopérative</th></tr></thead>
+      <thead><tr><th scope="col"><span class="vh">Fonction</span></th><th scope="col">Diagnostic</th><th scope="col" class="feat">Abonnement</th><th scope="col">Entreprise</th></tr></thead>
       <tbody>
         {row("Historique satellite rétroactif",Y,Y,Y)}
         {row("Croisement climat et stade de la culture",Y,Y,Y)}
@@ -615,7 +615,8 @@ TARIFS = phero("station", "Tarifs",
   <div class="faq-group">
     <div class="faq-side"><p class="eyebrow a2">Tarifs</p><h2 class="h3 a2">Questions fréquentes</h2></div>
     <div class="qa">
-      {qa("Pourquoi pas un prix affiché à l'hectare ?","Parce que le diagnostic dépend de votre découpage en secteurs et des modules utiles à vos cultures. Nous construisons le tarif avec vous après la démonstration, une fois le périmètre clair. Nous ne vendons pas un accès à de la donnée satellite brute, mais une lecture agronomique.",True)}
+      {qa("Combien coûte Firmaty ?","Le diagnostic de vos parcelles est gratuit. Le suivi continu coûte 5 € par hectare et par mois : 20 hectares suivis reviennent à 100 € par mois. Les coopératives, agrégateurs, exportateurs et assureurs reçoivent une proposition sur devis.",True)}
+      {qa("Le diagnostic gratuit m'engage-t-il ?","Non. Nous analysons les secteurs de votre choix, nous vous restituons les résultats, et vous décidez ensuite si vous souhaitez continuer avec l'abonnement.")}
       {qa("Faut-il acheter du matériel ?","Non. L'imagerie et le climat proviennent de sources externes, et les analyses de laboratoire sont celles que vous faites déjà. Les sondes peuvent être intégrées si vous en avez, sans être obligatoires.")}
       {qa("Peut-on commencer petit ?","Oui. Le diagnostic porte sur les secteurs de votre choix, et chaque module s'active secteur par secteur. Vous élargissez quand les résultats vous ont convaincu.")}
       {qa("Que deviennent nos données si nous arrêtons ?","Vos analyses et vos contours de parcelles restent votre propriété. Les modalités de restitution sont précisées dans le contrat.")}
@@ -623,7 +624,7 @@ TARIFS = phero("station", "Tarifs",
   </div>
 </section>
 </main>
-''' + cta(h2="Recevez une proposition pour vos parcelles", p="Indiquez votre surface, vos cultures et vos secteurs. Nous revenons vers vous avec un diagnostic et un tarif adapté.", btn="Demander un devis")
+''' + cta(h2="Commencez par un diagnostic gratuit", p="Indiquez votre surface, vos cultures et vos secteurs. Nous analysons vos parcelles sans frais et vous restituons les résultats.", btn="Demander mon diagnostic gratuit")
 
 
 # ---------------------------------------------------------------- SERVICES
@@ -706,7 +707,7 @@ svc_row(5, "accompagnement", "Accompagnement et pilotage", "Un agronome à vos c
 ''' + scrolly() + f'''
 <p class="demo-note">Interfaces reconstituées avec des données de démonstration. Aucune donnée d'exploitation réelle n'est affichée.</p>
 </main>
-''' + cta(h2="Commencez par un diagnostic de vos parcelles", p="Nous analysons vos secteurs sur les mois écoulés, sans rien installer. Découvrez ensuite les offres adaptées à votre exploitation.", btn="Voir les tarifs", href="tarifs.html")
+''' + cta(h2="Commencez par un diagnostic gratuit de vos parcelles", p="Nous analysons vos secteurs sur les mois écoulés, sans rien installer et sans frais. Découvrez ensuite les offres adaptées à votre exploitation.", btn="Voir les tarifs", href="tarifs.html")
 
 # ---------------------------------------------------------------- MISSION
 MISSION = phero("hero", "Notre mission",
@@ -724,6 +725,7 @@ MISSION = phero("hero", "Notre mission",
     <p class="eyebrow sl">Notre mission</p>
     <h2 class="h2 sl" style="transition-delay:.1s">Rendre l'agriculture de précision accessible à tous</h2>
     <p class="sl" style="transition-delay:.2s">Fondée en 2026, Firmaty s'est donnée pour mission de <b>rendre l'agriculture de précision accessible à tous</b>, des petites exploitations familiales aux grandes structures agricoles.</p>
+    <div class="farmers-note sl" style="transition-delay:.2s"><img src="img/logo-feuille.png" alt="" aria-hidden="true"><p><b>Agriculteurs avant tout.</b> Nous exploitons nous-mêmes nos fermes : chaque outil Firmaty est d'abord éprouvé sur nos propres parcelles, avant d'arriver sur les vôtres.</p></div>
     <p class="sl" style="transition-delay:.2s">Nous croyons que l'avenir de l'agriculture passe par une utilisation intelligente des données satellitaires et de l'intelligence artificielle. En combinant <b>l'imagerie Sentinel-2 gratuite</b> avec des algorithmes d'analyse avancés, nous permettons à chaque agriculteur de :</p>
     <ul class="mission-list sl" style="transition-delay:.25s">
       <li><span>01</span><div><b>Détecter 15 jours avant</b>Les problèmes, avant qu'ils ne deviennent visibles.</div></li>
@@ -735,13 +737,27 @@ MISSION = phero("hero", "Notre mission",
   <div class="media fi"><img src="img/avocat.jpg" alt="Main d'agronome examinant une feuille d'avocatier" loading="lazy" style="object-position:72% center"></div>
 </section>
 
+<section class="farmers" id="praticiens">
+  <div class="farmers-head">
+    <p class="eyebrow a2">Qui nous sommes</p>
+    <h2 class="h2 a2" style="transition-delay:.1s">Des agriculteurs, pas seulement des ingénieurs</h2>
+    <p class="lede a2" style="transition-delay:.15s">Avant de créer Firmaty, nous étions déjà au champ. Nous exploitons nos propres fermes, avec les mêmes contraintes que vous : l'eau, les intrants, la main-d'œuvre, le calendrier de récolte.</p>
+  </div>
+  <div class="farmers-grid">
+    <article class="a2"><span>01</span><h3>Nous cultivons nous-mêmes</h3><p>Firmaty est née de nos besoins d'exploitants. Nous savons ce qu'une décision d'irrigation ou de fertilisation coûte quand elle arrive trop tard.</p></article>
+    <article class="a2" style="transition-delay:.1s"><span>02</span><h3>Testé chez nous d'abord</h3><p>Chaque fonction est éprouvée sur nos propres parcelles avant de vous être proposée. Ce qui ne sert pas au champ ne sort pas.</p></article>
+    <article class="a2" style="transition-delay:.2s"><span>03</span><h3>Le même langage que vous</h3><p>Nous parlons de secteurs, de stades et de doses, pas de pixels. Nos recommandations sont celles que nous appliquons nous-mêmes.</p></article>
+  </div>
+</section>
+<!--TESTIMONIALS-->
+
 <section class="wrap20 sec-gap">
   <div class="box road-box">
     <p class="eyebrow a2">Notre ambition</p>
     <h2 class="h2 a2" style="transition-delay:.1s">De 20 exploitations pilotes à plus de 1 000 fermes</h2>
     <p class="lede a2" style="transition-delay:.15s">Actuellement en phase pilote avec 20 exploitations au Maroc sur 200 hectares, Firmaty vise à accompagner plus de 1 000 fermes dans les deux prochaines années.</p>
     <ol class="road" data-play>
-      <li class="r-done"><span class="road-dot"></span><p class="road-y">2026</p><h3>Création de Firmaty</h3><p>La conviction devient une entreprise : rendre l'observation de la Terre utile à chaque exploitation.</p></li>
+      <li class="r-done"><span class="road-dot"></span><p class="road-y">2026</p><h3>Création de Firmaty</h3><p>Des agriculteurs qui exploitent leurs propres fermes créent l'outil dont ils avaient besoin, pour le rendre utile à chaque exploitation.</p></li>
       <li class="r-now"><span class="road-dot"></span><p class="road-y">Aujourd'hui</p><h3>Phase pilote au Maroc</h3><p><b>20 exploitations</b> et <b>200 hectares</b> suivis, pour éprouver le diagnostic sur le terrain, culture par culture.</p></li>
       <li class="r-next"><span class="road-dot"></span><p class="road-y">D'ici deux ans</p><h3>Plus de 1 000 fermes</h3><p>Étendre l'accompagnement aux exploitations familiales comme aux grandes structures, et démocratiser l'accès à l'agriculture de précision au Maroc.</p></li>
     </ol>
